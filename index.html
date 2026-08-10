@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<title>DeltaClient 1.14.4 with OptiFine, ready to play.</title>
+<meta content="DeltaClient 1.14.4 with OptiFine, ready to play." property="og:title">
+<meta content="website" property="og:type">
+<meta content="DeltaClient 1.14.4 with OptiFine, ready to play. — ブラウザから即起動。1.14.4プロトコルに完全対応し、OptiFineの高速描画でサクサク動く、 パフォーマンス特化のEaglercraft環境です。" property="og:description">
+<meta content="DeltaClient 1.14.4 with OptiFine, ready to play. — ブラウザから即起動。1.14.4プロトコルに完全対応し、OptiFineの高速描画でサクサク動く、 パフォーマンス特化のEaglercraft環境です。" name="description">
+<meta content="summary_large_image" name="twitter:card">
+<style>
+@import"https://fonts.googleapis.com/css2?family=Nunito:wght@800&family=Inter:wght@400&display=swap";*,:before,:after{--tw-border-spacing-x: 0;--tw-border-spacing-y: 0;--tw-translate-x: 0;--tw-translate-y: 0;--tw-rotate: 0;--tw-skew-x: 0;--tw-skew-y: 0;--tw-scale-x: 1;--tw-scale-y: 1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness: proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width: 0px;--tw-ring-offset-color: #fff;--tw-ring-color: rgb(59 130 246 / .5);--tw-ring-offset-shadow: 0 0 #0000;--tw-ring-shadow: 0 0 #0000;--tw-shadow: 0 0 #0000;--tw-shadow-colored: 0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x: 0;--tw-border-spacing-y: 0;--tw-translate-x: 0;--tw-translate-y: 0;--tw-rotate: 0;--tw-skew-x: 0;--tw-skew-y: 0;--tw-scale-x: 1;--tw-scale-y: 1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness: proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width: 0px;--tw-ring-offset-color: #fff;--tw-ring-color: rgb(59 130 246 / .5);--tw-ring-offset-shadow: 0 0 #0000;--tw-ring-shadow: 0 0 #0000;--tw-shadow: 0 0 #0000;--tw-shadow-colored: 0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }*,:before,:after{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}:before,:after{--tw-content: ""}html,:host{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:Inter,system-ui,sans-serif;font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,samp,pre{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dl,dd,h1,h2,h3,h4,h5,h6,hr,figure,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}ol,ul,menu{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}button,[role=button]{cursor:pointer}:disabled{cursor:default}img,svg,video,canvas,audio,iframe,embed,object{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}:root{--background: 226 49% 8%;--foreground: 223 100% 99%;--card: 223 38% 13%;--card-foreground: 223 100% 99%;--popover: 223 38% 13%;--popover-foreground: 223 100% 99%;--primary: 235 86% 65%;--primary-foreground: 226 49% 8%;--secondary: 226 49% 8%;--secondary-foreground: 223 100% 99%;--muted: 226 49% 8%;--muted-foreground: 224 31% 78%;--accent: 197 100% 48%;--accent-foreground: 223 100% 99%;--destructive: 341 73% 51%;--destructive-foreground: 223 100% 99%;--border: 224 32% 24%;--input: 224 32% 24%;--ring: 235 86% 65%;--radius: .5rem;--font-heading: "Nunito", sans-serif;--font-body: "Inter", sans-serif}*{border-color:hsl(var(--border))}body{background-color:hsl(var(--background));color:hsl(var(--foreground));font-family:var(--font-body)}h1,h2,h3,h4,h5,h6{font-family:var(--font-heading);font-weight:800}.pointer-events-none{pointer-events:none}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.sticky{position:sticky}.inset-0{top:0;right:0;bottom:0;left:0}.top-0{top:0}.top-4{top:1rem}.right-4{right:1rem}.z-0{z-index:0}.z-10{z-index:10}.z-40{z-index:40}.z-\[9999\]{z-index:9999}.z-\[10000\]{z-index:10000}.mx-auto{margin-left:auto;margin-right:auto}.mb-4{margin-bottom:1rem}.mb-8{margin-bottom:2rem}.mb-10{margin-bottom:2.5rem}.mb-12{margin-bottom:3rem}.ml-1{margin-left:.25rem}.mr-2{margin-right:.5rem}.mt-0\.5{margin-top:.125rem}.mt-1{margin-top:.25rem}.mt-2{margin-top:.5rem}.mt-5{margin-top:1.25rem}.mt-8{margin-top:2rem}.mt-10{margin-top:2.5rem}.mt-16{margin-top:4rem}.block{display:block}.flex{display:flex}.inline-flex{display:inline-flex}.grid{display:grid}.hidden{display:none}.h-8{height:2rem}.h-9{height:2.25rem}.h-10{height:2.5rem}.h-11{height:2.75rem}.h-14{height:3.5rem}.h-4{height:1rem}.h-5{height:1.25rem}.h-full{height:100%}.h-px{height:1px}.min-h-screen{min-height:100vh}.w-4{width:1rem}.w-5{width:1.25rem}.w-8{width:2rem}.w-9{width:2.25rem}.w-10{width:2.5rem}.w-11{width:2.75rem}.w-16{width:4rem}.w-full{width:100%}.max-w-\[200px\]{max-width:200px}.max-w-2xl{max-width:42rem}.max-w-3xl{max-width:48rem}.max-w-4xl{max-width:56rem}.max-w-6xl{max-width:72rem}.max-w-7xl{max-width:80rem}.max-w-prose{max-width:65ch}.max-w-xl{max-width:36rem}.shrink-0,.flex-shrink-0{flex-shrink:0}.scale-105{--tw-scale-x:1.05;--tw-scale-y:1.05;transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skew(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.scale-110{--tw-scale-x:1.1;--tw-scale-y:1.1;transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skew(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.cursor-default{cursor:default}.select-none{-webkit-user-select:none;user-select:none}.grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr))}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-start{align-items:flex-start}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-1{gap:.25rem}.gap-1\.5{gap:.375rem}.gap-2{gap:.5rem}.gap-3{gap:.75rem}.gap-4{gap:1rem}.gap-5{gap:1.25rem}.gap-6{gap:1.5rem}.gap-8{gap:2rem}.space-y-2>:not([hidden])~:not([hidden]){margin-top:.5rem}.space-y-3>:not([hidden])~:not([hidden]){margin-top:.75rem}.space-y-4>:not([hidden])~:not([hidden]){margin-top:1rem}.self-start{align-self:flex-start}.overflow-hidden{overflow:hidden}.whitespace-nowrap{white-space:nowrap}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:var(--radius)}.rounded-md{border-radius:calc(var(--radius) - 2px)}.rounded-sm{border-radius:calc(var(--radius) - 4px)}.rounded-xl{border-radius:.75rem}.border{border-width:1px}.border-b{border-bottom-width:1px}.border-t{border-top-width:1px}.border-border{border-color:hsl(var(--border))}.border-border\/20{border-color:hsl(var(--border)/.2)}.border-border\/40{border-color:hsl(var(--border)/.4)}.border-border\/50{border-color:hsl(var(--border)/.5)}.border-primary\/30{border-color:hsl(var(--primary)/.3)}.border-primary\/40{border-color:hsl(var(--primary)/.4)}.border-primary\/50{border-color:hsl(var(--primary)/.5)}.border-transparent{border-color:transparent}.border-white\/30{border-color:#ffffff4d}.bg-background{background-color:hsl(var(--background))}.bg-background\/20{background-color:hsl(var(--background)/.2)}.bg-background\/60{background-color:hsl(var(--background)/.6)}.bg-background\/80{background-color:hsl(var(--background)/.8)}.bg-black{background-color:#000}.bg-black\/70{background-color:#000000b3}.bg-border{background-color:hsl(var(--border))}.bg-card{background-color:hsl(var(--card))}.bg-card\/40{background-color:hsl(var(--card)/.4)}.bg-card\/70{background-color:hsl(var(--card)/.7)}.bg-card\/90{background-color:hsl(var(--card)/.9)}.bg-muted{background-color:hsl(var(--muted))}.bg-muted\/40{background-color:hsl(var(--muted)/.4)}.bg-primary{background-color:hsl(var(--primary))}.bg-primary\/10{background-color:hsl(var(--primary)/.1)}.bg-primary\/15{background-color:hsl(var(--primary)/.15)}.bg-primary\/20{background-color:hsl(var(--primary)/.2)}.bg-secondary{background-color:hsl(var(--secondary))}.bg-transparent{background-color:transparent}.object-cover{object-fit:cover}.p-2{padding:.5rem}.p-5{padding:1.25rem}.p-6{padding:1.5rem}.px-2{padding-left:.5rem;padding-right:.5rem}.px-2\.5{padding-left:.625rem;padding-right:.625rem}.px-3{padding-left:.75rem;padding-right:.75rem}.px-4{padding-left:1rem;padding-right:1rem}.px-5{padding-left:1.25rem;padding-right:1.25rem}.px-8{padding-left:2rem;padding-right:2rem}.py-0\.5{padding-top:.125rem;padding-bottom:.125rem}.py-1{padding-top:.25rem;padding-bottom:.25rem}.py-1\.5{padding-top:.375rem;padding-bottom:.375rem}.py-2{padding-top:.5rem;padding-bottom:.5rem}.py-3{padding-top:.75rem;padding-bottom:.75rem}.py-6{padding-top:1.5rem;padding-bottom:1.5rem}.py-20{padding-top:5rem;padding-bottom:5rem}.py-24{padding-top:6rem;padding-bottom:6rem}.pt-2{padding-top:.5rem}.pt-4{padding-top:1rem}.text-left{text-align:left}.text-center{text-align:center}.text-right{text-align:right}.font-heading{font-family:Nunito,system-ui,sans-serif}.font-mono{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace}.font-sans{font-family:Inter,system-ui,sans-serif}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-4xl{font-size:2.25rem;line-height:2.5rem}.text-base{font-size:1rem;line-height:1.5rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:.875rem;line-height:1.25rem}.text-xs{font-size:.75rem;line-height:1rem}.font-bold{font-weight:700}.font-medium{font-weight:500}.font-semibold{font-weight:600}.uppercase{text-transform:uppercase}.leading-none{line-height:1}.leading-relaxed{line-height:1.625}.leading-snug{line-height:1.375}.leading-tight{line-height:1.25}.tracking-tight{letter-spacing:-.025em}.tracking-wide{letter-spacing:.025em}.tracking-widest{letter-spacing:.1em}.text-card-foreground{color:hsl(var(--card-foreground))}.text-destructive{color:hsl(var(--destructive))}.text-foreground{color:hsl(var(--foreground))}.text-foreground\/90{color:hsl(var(--foreground)/.9)}.text-muted-foreground{color:hsl(var(--muted-foreground))}.text-muted-foreground\/60{color:hsl(var(--muted-foreground)/.6)}.text-muted-foreground\/70{color:hsl(var(--muted-foreground)/.7)}.text-primary{color:hsl(var(--primary))}.text-primary-foreground{color:hsl(var(--primary-foreground))}.text-secondary-foreground{color:hsl(var(--secondary-foreground))}.text-white{color:#fff}.opacity-5{opacity:.05}.opacity-10{opacity:.1}.shadow{box-shadow:0 1px 3px 0 rgb(0 0 0/.1),0 1px 2px -1px rgb(0 0 0/.1)}.shadow-lg{box-shadow:0 10px 15px -3px rgb(0 0 0/.1),0 4px 6px -4px rgb(0 0 0/.1)}.shadow-md{box-shadow:0 4px 6px -1px rgb(0 0 0/.1),0 2px 4px -2px rgb(0 0 0/.1)}.shadow-sm{box-shadow:0 1px 2px 0 rgb(0 0 0/.05)}.shadow-primary\/10{--tw-shadow-color:hsl(var(--primary)/.1);box-shadow:0 1px 2px 0 var(--tw-shadow-color)}.blur-2xl{filter:blur(40px)}.blur-md{filter:blur(12px)}.backdrop-blur-md{-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}.backdrop-blur-sm{-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.15s}.transition-colors{transition-property:color,background-color,border-color,text-decoration-color,fill,stroke;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.15s}.duration-200{transition-duration:.2s}.duration-300{transition-duration:.3s}.ease-out{transition-timing-function:cubic-bezier(0,0,.2,1)}.hover\:-translate-y-0\.5:hover{transform:translateY(-.125rem)}.hover\:-translate-y-1:hover{transform:translateY(-.25rem)}.hover\:bg-accent:hover{background-color:hsl(var(--accent))}.hover\:bg-black\/85:hover{background-color:#000000d9}.hover\:bg-muted\/30:hover{background-color:hsl(var(--muted)/.3)}.hover\:bg-primary\/80:hover{background-color:hsl(var(--primary)/.8)}.hover\:bg-primary\/90:hover{background-color:hsl(var(--primary)/.9)}.hover\:bg-secondary\/80:hover{background-color:hsl(var(--secondary)/.8)}.hover\:text-accent-foreground:hover{color:hsl(var(--accent-foreground))}.hover\:text-foreground:hover{color:hsl(var(--foreground))}.hover\:underline:hover{text-decoration-line:underline}.hover\:shadow-lg:hover{box-shadow:0 10px 15px -3px rgb(0 0 0/.1),0 4px 6px -4px rgb(0 0 0/.1)}.hover\:shadow-md:hover{box-shadow:0 4px 6px -1px rgb(0 0 0/.1),0 2px 4px -2px rgb(0 0 0/.1)}.hover\:shadow-xl:hover{box-shadow:0 20px 25px -5px rgb(0 0 0/.1),0 8px 10px -6px rgb(0 0 0/.1)}.focus-visible\:outline-none:focus-visible{outline:2px solid transparent;outline-offset:2px}.focus-visible\:ring-2:focus-visible{box-shadow:0 0 0 2px hsl(var(--ring))}.focus-visible\:ring-white\/80:focus-visible{box-shadow:0 0 0 2px rgb(255 255 255/.8)}.disabled\:pointer-events-none:disabled{pointer-events:none}.disabled\:opacity-50:disabled{opacity:.5}.group:hover .group-hover\:text-primary{color:hsl(var(--primary))}@media (min-width:640px){.sm\:block{display:block}.sm\:inline-flex{display:inline-flex}.sm\:flex-row{flex-direction:row}}@media (min-width:768px){.md\:block{display:block}.md\:flex{display:flex}.md\:hidden{display:none}.md\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.md\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}.md\:flex-row{flex-direction:row}.md\:items-start{align-items:flex-start}.md\:gap-4{gap:1rem}.md\:px-8{padding-left:2rem;padding-right:2rem}.md\:text-4xl{font-size:2.25rem;line-height:2.5rem}.md\:text-6xl{font-size:3.75rem;line-height:1}.md\:text-base{font-size:1rem;line-height:1.5rem}.md\:text-lg{font-size:1.125rem;line-height:1.75rem}.md\:text-sm{font-size:.875rem;line-height:1.25rem}}@media (min-width:1024px){.lg\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.lg\:px-16{padding-left:4rem;padding-right:4rem}.lg\:text-7xl{font-size:4.5rem;line-height:1}}
+</style>
+</head>
+<body>
+<div id="app">
+  <div class="min-h-screen bg-background text-foreground">
+    <!-- Header -->
+    <header class="sticky top-0 z-40 bg-background/20 backdrop-blur-md border-b border-border/20" id="header">
+      <div class="max-w-7xl mx-auto px-4 md:px-8 lg:px-16 h-14 flex items-center justify-between gap-4">
+        <a class="flex items-center gap-2 shrink-0 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-md" href="#top">
+          <span class="font-heading text-lg font-bold text-foreground tracking-tight group-hover:text-primary transition-colors duration-200 ease-out">DeltaClient</span>
+          <div class="items-center transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 shadow hover:bg-primary/80 hidden sm:inline-flex text-xs bg-primary/20 text-primary border border-primary/30 rounded-full px-2 py-0.5 font-mono font-medium">1.14.4 + OptiFine</div>
+        </a>
+        <nav class="hidden md:flex items-center gap-1">
+          <a class="px-4 py-1.5 text-sm text-muted-foreground hover:text-foreground rounded-md transition-all duration-200 ease-out hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2" href="#protocol-and-speed">Features</a>
+          <a class="px-4 py-1.5 text-sm text-muted-foreground hover:text-foreground rounded-md transition-all duration-200 ease-out hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2" href="#performance-note">Performance</a>
+        </nav>
+        <div class="hidden md:flex items-center gap-3 shrink-0">
+          <span class="text-xs text-muted-foreground/70 tracking-wide max-w-[200px] text-right leading-tight">1.14.4 protocol対応 / 描画を優先してシェーダー無効</span>
+          <button type="button" data-play-btn class="justify-center whitespace-nowrap disabled:pointer-events-none disabled:opacity-50 hover:bg-primary/90 h-9 rounded-full px-5 py-2 bg-primary text-primary-foreground font-semibold text-sm shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 flex items-center gap-1.5">
+            <svg fill="currentColor" height="14" viewBox="0 0 256 256" width="14" xmlns="http://www.w3.org/2000/svg"><path d="M228.23,134.69,84.15,222.81A8,8,0,0,1,72,216.12V39.88a8,8,0,0,1,12.15-6.69l144.08,88.12A7.82,7.82,0,0,1,228.23,134.69Z" opacity="0.2"></path><path d="M232.4,114.49,88.32,26.35a16,16,0,0,0-16.2-.3A15.86,15.86,0,0,0,64,39.87V216.13A15.94,15.94,0,0,0,80,232a16.07,16.07,0,0,0,8.36-2.35L232.4,141.51a15.81,15.81,0,0,0,0-27ZM80,215.94V40l143.83,88Z"></path></svg>
+            プレイ開始
+          </button>
+        </div>
+        <div class="flex md:hidden items-center gap-2">
+          <button type="button" data-play-btn class="justify-center whitespace-nowrap disabled:pointer-events-none disabled:opacity-50 hover:bg-primary/90 h-8 rounded-full px-4 py-1.5 bg-primary text-primary-foreground font-semibold text-sm shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 flex items-center gap-1">
+            <svg fill="currentColor" height="13" viewBox="0 0 256 256" width="13" xmlns="http://www.w3.org/2000/svg"><path d="M228.23,134.69,84.15,222.81A8,8,0,0,1,72,216.12V39.88a8,8,0,0,1,12.15-6.69l144.08,88.12A7.82,7.82,0,0,1,228.23,134.69Z" opacity="0.2"></path><path d="M232.4,114.49,88.32,26.35a16,16,0,0,0-16.2-.3A15.86,15.86,0,0,0,64,39.87V216.13A15.94,15.94,0,0,0,80,232a16.07,16.07,0,0,0,8.36-2.35L232.4,141.51a15.81,15.81,0,0,0,0-27ZM80,215.94V40l143.83,88Z"></path></svg>
+            プレイ
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero -->
+      <section class="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-background" id="delta-client-hero">
+        <div aria-hidden="true" class="absolute inset-0 w-full h-full" id="hero-bg-rotate" style="transform:rotate(0deg) scale(1.25);transform-origin:center center;will-change:transform">
+          <img alt="Blurred rotating block world panorama" class="w-full h-full object-cover" loading="lazy" src="https://c.animaapp.com/msmfiabbScmx2E/img/ai_1.png" style="filter:blur(18px) brightness(0.45) saturate(1.2)">
+        </div>
+        <div aria-hidden="true" class="absolute inset-0 bg-background/60" style="backdrop-filter:blur(2px)"></div>
+        <div aria-hidden="true" class="absolute inset-0 pointer-events-none" style="background:radial-gradient(ellipse 80% 70% at 50% 50%, transparent 30%, rgba(0,0,0,0.55) 100%)"></div>
+        <div class="relative z-10 w-full max-w-4xl mx-auto px-4 md:px-8 py-24 flex flex-col items-center text-center gap-8">
+          <div class="flex items-center gap-2">
+            <div class="inline-flex items-center font-semibold bg-primary/20 text-primary border border-primary/40 text-xs uppercase tracking-widest px-3 py-1 rounded-full font-sans">Eaglercraft</div>
+            <div class="inline-flex items-center font-semibold bg-muted/40 text-muted-foreground border border-border text-xs uppercase tracking-widest px-3 py-1 rounded-full font-sans">v1.14.4 + OptiFine</div>
+          </div>
+          <h1 class="font-heading text-4xl md:text-6xl lg:text-7xl tracking-tight leading-tight text-foreground">DeltaClient<br><span class="text-primary">1.14.4</span> with OptiFine,<br>ready to play.</h1>
+          <p class="text-base md:text-lg text-muted-foreground max-w-xl leading-relaxed font-sans">ブラウザから即起動。1.14.4プロトコルに完全対応し、OptiFineの高速描画でサクサク動く、 パフォーマンス特化のEaglercraft環境です。</p>
+          <div class="flex flex-col sm:flex-row items-center gap-4 mt-2">
+            <button type="button" data-play-btn id="main-play-btn" class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium disabled:pointer-events-none disabled:opacity-50 hover:bg-primary/90 h-10 bg-primary text-primary-foreground rounded-full px-8 py-3 text-base font-heading shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2">今すぐプレイ</button>
+            <a class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium border shadow-sm hover:text-accent-foreground h-10 rounded-full px-8 py-3 text-base font-heading border-border text-foreground bg-transparent hover:bg-muted/30 transition-all duration-200 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2" href="#protocol-and-speed">
+              <svg class="mr-2 w-4 h-4" fill="currentColor" height="1em" viewBox="0 0 256 256" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M200,144l-72,72L56,144Z" opacity="0.2"></path><path d="M207.39,140.94A8,8,0,0,0,200,136H136V40a8,8,0,0,0-16,0v96H56a8,8,0,0,0-5.66,13.66l72,72a8,8,0,0,0,11.32,0l72-72A8,8,0,0,0,207.39,140.94ZM128,204.69,75.31,152H180.69Z"></path></svg>
+              特徴を見る
+            </a>
+          </div>
+          <p id="play-error" class="text-sm text-destructive font-sans hidden"></p>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8 w-full">
+            <div class="rounded-xl border p-6 flex flex-col gap-3 text-left bg-card/40 backdrop-blur-sm transition-all duration-200 ease-out hover:-translate-y-0.5 hover:shadow-md border-primary/50 shadow-sm shadow-primary/10">
+              <div class="w-9 h-9 rounded-lg flex items-center justify-center bg-primary/20">
+                <svg class="w-5 h-5 text-primary" fill="currentColor" height="1em" viewBox="0 0 256 256" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M96,240l16-80L48,136,160,16,144,96l64,24Z" opacity="0.2"></path><path d="M215.79,118.17a8,8,0,0,0-5-5.66L153.18,90.9l14.66-73.33a8,8,0,0,0-13.69-7l-112,120a8,8,0,0,0,3,13l57.63,21.61L88.16,238.43a8,8,0,0,0,13.69,7l112-120A8,8,0,0,0,215.79,118.17ZM109.37,214l10.47-52.38a8,8,0,0,0-5-9.06L62,132.71l84.62-90.66L136.16,94.43a8,8,0,0,0,5,9.06l52.8,19.8Z"></path></svg>
+              </div>
+              <p class="font-heading text-sm md:text-base leading-snug text-foreground">1.14.4 Protocol 完全対応</p>
+              <p class="text-xs md:text-sm text-muted-foreground leading-relaxed font-sans">最新の1.14.4プロトコルに対応。バニラサーバーからカスタムサーバーまで、安定した接続を実現します。</p>
+              <div class="inline-flex items-center font-semibold self-start bg-primary/15 text-primary border border-primary/30 text-xs rounded-full px-2 py-0.5 font-sans uppercase tracking-wide">主要機能</div>
+            </div>
+            <div class="rounded-xl border p-6 flex flex-col gap-3 text-left bg-card/40 backdrop-blur-sm transition-all duration-200 ease-out hover:-translate-y-0.5 hover:shadow-md border-border/50">
+              <div class="w-9 h-9 rounded-lg flex items-center justify-center bg-muted/40">
+                <svg class="w-5 h-5 text-muted-foreground" fill="currentColor" height="1em" viewBox="0 0 256 256" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M128,56C48,56,16,128,16,128s32,72,112,72,112-72,112-72S208,56,128,56Zm0,112a40,40,0,1,1,40-40A40,40,0,0,1,128,168Z" opacity="0.2"></path><path d="M247.31,124.76c-.35-.79-8.82-19.58-27.65-38.41C194.57,61.26,162.88,48,128,48S61.43,61.26,36.34,86.35C17.51,105.18,9,124,8.69,124.76a8,8,0,0,0,0,6.5c.35.79,8.82,19.57,27.65,38.4C61.43,194.74,93.12,208,128,208s66.57-13.26,91.66-38.34c18.83-18.83,27.3-37.61,27.65-38.4A8,8,0,0,0,247.31,124.76ZM128,192c-30.78,0-57.67-11.19-79.93-33.25A133.47,133.47,0,0,1,25,128,133.33,133.33,0,0,1,48.07,97.25C70.33,75.19,97.22,64,128,64s57.67,11.19,79.93,33.25A133.46,133.46,0,0,1,231.05,128C223.84,141.46,192.43,192,128,192Zm0-112a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160Z"></path></svg>
+              </div>
+              <p class="font-heading text-sm md:text-base leading-snug text-foreground/90">OptiFine 内蔵で描画が軽快</p>
+              <p class="text-xs md:text-sm text-muted-foreground leading-relaxed font-sans">バックエンドにOptiFineを統合済み。チャンクロードが高速で、フレームレートが安定した快適なプレイ体験を提供します。</p>
+            </div>
+            <div class="rounded-xl border p-6 flex flex-col gap-3 text-left bg-card/40 backdrop-blur-sm transition-all duration-200 ease-out hover:-translate-y-0.5 hover:shadow-md border-border/50">
+              <div class="w-9 h-9 rounded-lg flex items-center justify-center bg-muted/40">
+                <svg class="w-5 h-5 text-muted-foreground" fill="currentColor" height="1em" viewBox="0 0 256 256" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M224,128a96,96,0,1,1-96-96A96,96,0,0,1,224,128Z" opacity="0.2"></path><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm88,104a87.56,87.56,0,0,1-20.41,56.28L71.72,60.4A88,88,0,0,1,216,128ZM40,128A87.56,87.56,0,0,1,60.41,71.72L184.28,195.6A88,88,0,0,1,40,128Z"></path></svg>
+              </div>
+              <p class="font-heading text-sm md:text-base leading-snug text-foreground/90">シェーダー等の一部演出は無効化</p>
+              <p class="text-xs md:text-sm text-muted-foreground leading-relaxed font-sans">パフォーマンスを最大限に保つため、シェーダーや一部のビジュアルエフェクトは意図的に無効化されています。</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Features -->
+      <section class="bg-muted py-20 px-4 md:px-8 lg:px-16" id="protocol-and-speed">
+        <div class="max-w-6xl mx-auto">
+          <div class="mb-12 text-center">
+            <p class="text-xs md:text-sm uppercase tracking-widest text-muted-foreground mb-4 font-sans">Features</p>
+            <h2 class="text-3xl md:text-4xl font-heading tracking-tight leading-tight text-foreground">1.14.4に最適化された、<br class="hidden sm:block">軽くて遊びやすいプレイ体験</h2>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="text-card-foreground bg-card border border-border rounded-xl shadow-md transition-all duration-200 ease-out hover:-translate-y-1 hover:shadow-xl group cursor-default">
+              <div class="p-6 flex flex-col gap-4">
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center justify-center w-10 h-10 rounded-lg bg-primary/10 text-primary">
+                    <svg fill="currentColor" height="22" viewBox="0 0 256 256" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M216,56v56c0,96-88,120-88,120S40,208,40,112V56a8,8,0,0,1,8-8H208A8,8,0,0,1,216,56Z" opacity="0.2"></path><path d="M208,40H48A16,16,0,0,0,32,56v56c0,52.72,25.52,84.67,46.93,102.19,23.06,18.86,46,25.27,47,25.53a8,8,0,0,0,4.2,0c1-.26,23.91-6.67,47-25.53C198.48,196.67,224,164.72,224,112V56A16,16,0,0,0,208,40Zm0,72c0,37.07-13.66,67.16-40.6,89.42A129.3,129.3,0,0,1,128,223.62a128.25,128.25,0,0,1-38.92-21.81C61.82,179.51,48,149.3,48,112l0-56,160,0Z"></path></svg>
+                  </div>
+                  <div class="inline-flex items-center border font-semibold border-transparent shadow text-xs font-sans px-2 py-0.5 rounded-full bg-primary text-primary-foreground">1.14.4</div>
+                </div>
+                <div class="flex flex-col gap-2">
+                  <h3 class="text-base md:text-lg font-heading leading-snug text-foreground">Protocol 1.14.4 対応</h3>
+                  <p class="text-sm md:text-base text-muted-foreground leading-relaxed">1.14.4のプロトコルにネイティブ対応。既存の1.14.4サーバーへそのまま接続でき、互換性の心配なく安心してプレイできます。</p>
+                </div>
+              </div>
+            </div>
+            <div class="text-card-foreground bg-card border border-border rounded-xl shadow-md transition-all duration-200 ease-out hover:-translate-y-1 hover:shadow-xl group cursor-default">
+              <div class="p-6 flex flex-col gap-4">
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center justify-center w-10 h-10 rounded-lg bg-primary/10 text-primary">
+                    <svg fill="currentColor" height="22" viewBox="0 0 256 256" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M96,240l16-80L48,136,160,16,144,96l64,24Z" opacity="0.2"></path><path d="M215.79,118.17a8,8,0,0,0-5-5.66L153.18,90.9l14.66-73.33a8,8,0,0,0-13.69-7l-112,120a8,8,0,0,0,3,13l57.63,21.61L88.16,238.43a8,8,0,0,0,13.69,7l112-120A8,8,0,0,0,215.79,118.17ZM109.37,214l10.47-52.38a8,8,0,0,0-5-9.06L62,132.71l84.62-90.66L136.16,94.43a8,8,0,0,0,5,9.06l52.8,19.8Z"></path></svg>
+                  </div>
+                </div>
+                <div class="flex flex-col gap-2">
+                  <h3 class="text-base md:text-lg font-heading leading-snug text-foreground">Optifine 内蔵</h3>
+                  <p class="text-sm md:text-base text-muted-foreground leading-relaxed">Optifineをビルトインで搭載。チャンクの読み込みやテクスチャ処理を裏側で最適化し、ブラウザ上でも軽快な描画を実現します。</p>
+                </div>
+              </div>
+            </div>
+            <div class="text-card-foreground bg-card border border-border rounded-xl shadow-md transition-all duration-200 ease-out hover:-translate-y-1 hover:shadow-xl group cursor-default">
+              <div class="p-6 flex flex-col gap-4">
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center justify-center w-10 h-10 rounded-lg bg-primary/10 text-primary">
+                    <svg fill="currentColor" height="22" viewBox="0 0 256 256" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M224,128a96,96,0,1,1-96-96A96,96,0,0,1,224,128Z" opacity="0.2"></path><path d="M128,24h0A104,104,0,1,0,232,128,104.12,104.12,0,0,0,128,24Zm88,104a87.61,87.61,0,0,1-3.33,24H174.16a157.44,157.44,0,0,0,0-48h38.51A87.61,87.61,0,0,1,216,128ZM102,168H154a115.11,115.11,0,0,1-26,45A115.27,115.27,0,0,1,102,168Zm-3.9-16a140.84,140.84,0,0,1,0-48h59.88a140.84,140.84,0,0,1,0,48ZM40,128a87.61,87.61,0,0,1,3.33-24H81.84a157.44,157.44,0,0,0,0,48H43.33A87.61,87.61,0,0,1,40,128ZM154,88H102a115.11,115.11,0,0,1,26-45A115.27,115.27,0,0,1,154,88Zm52.33,0H170.71a135.28,135.28,0,0,0-22.3-45.6A88.29,88.29,0,0,1,206.37,88ZM107.59,42.4A135.28,135.28,0,0,0,85.29,88H49.63A88.29,88.29,0,0,1,107.59,42.4ZM49.63,168H85.29a135.28,135.28,0,0,0,22.3,45.6A88.29,88.29,0,0,1,49.63,168Zm98.78,45.6a135.28,135.28,0,0,0,22.3-45.6h35.66A88.29,88.29,0,0,1,148.41,213.6Z"></path></svg>
+                  </div>
+                </div>
+                <div class="flex flex-col gap-2">
+                  <h3 class="text-base md:text-lg font-heading leading-snug text-foreground">ブラウザですぐプレイ</h3>
+                  <p class="text-sm md:text-base text-muted-foreground leading-relaxed">インストール不要。URLを開くだけでゲームが始まります。どのデバイスからでも、セットアップなしで即座にサーバーへ参加できます。</p>
+                </div>
+              </div>
+            </div>
+            <div class="text-card-foreground bg-card border border-border rounded-xl shadow-md transition-all duration-200 ease-out hover:-translate-y-1 hover:shadow-xl group cursor-default">
+              <div class="p-6 flex flex-col gap-4">
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center justify-center w-10 h-10 rounded-lg bg-primary/10 text-primary">
+                    <svg fill="currentColor" height="22" viewBox="0 0 256 256" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M232,152v24a8,8,0,0,1-8,8H32a8,8,0,0,1-8-8V153.13C24,95.65,70.15,48.2,127.63,48A104,104,0,0,1,232,152Z" opacity="0.2"></path><path d="M207.06,72.67A111.24,111.24,0,0,0,128,40h-.4C66.07,40.21,16,91,16,153.13V176a16,16,0,0,0,16,16H224a16,16,0,0,0,16-16V152A111.25,111.25,0,0,0,207.06,72.67ZM224,176H119.71l54.76-75.3a8,8,0,0,0-12.94-9.42L99.92,176H32V153.13c0-3.08.15-6.12.43-9.13H56a8,8,0,0,0,0-16H35.27c10.32-38.86,44-68.24,84.73-71.66V80a8,8,0,0,0,16,0V56.33A96.14,96.14,0,0,1,221,128H200a8,8,0,0,0,0,16h23.67c.21,2.65.33,5.31.33,8Z"></path></svg>
+                  </div>
+                </div>
+                <div class="flex flex-col gap-2">
+                  <h3 class="text-base md:text-lg font-heading leading-snug text-foreground">快適さ優先設計</h3>
+                  <p class="text-sm md:text-base text-muted-foreground leading-relaxed">パフォーマンスを最大限に保つため、シェーダーや高負荷エフェクトは意図的に無効化しています。軽さと安定性を最優先にした設計です。</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ShadowFlare Server -->
+      <section class="bg-background py-20 px-4 md:px-8 lg:px-16" id="shadowflare-server">
+        <div class="max-w-6xl mx-auto">
+          <div class="text-center mb-10">
+            <p class="text-xs md:text-sm uppercase tracking-widest text-muted-foreground mb-4 font-sans">Optimized SMP</p>
+            <h2 class="text-3xl md:text-4xl font-heading tracking-tight leading-tight text-foreground">ShadowFlare<br class="hidden sm:block">DeltaClient向け最適化SMPサーバー</h2>
+            <p class="mt-5 text-sm md:text-base text-muted-foreground max-w-3xl mx-auto leading-relaxed">Login Problem Fixed / Custom Biome Update対応。探索、建築、戦闘までを一つの世界で楽しめる、 サバイバル重視のSMPです。DeltaClientの1.14.4環境とも相性が良く、低遅延で安定した接続を狙える構成です。</p>
+          </div>
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+            <div class="text-card-foreground shadow bg-card border border-border rounded-xl">
+              <div class="p-6 space-y-4">
+                <div class="flex items-center gap-2">
+                  <svg class="text-primary" fill="currentColor" height="20" viewBox="0 0 256 256" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M216,56v56c0,96-88,120-88,120S40,208,40,112V56a8,8,0,0,1,8-8H208A8,8,0,0,1,216,56Z" opacity="0.2"></path><path d="M208,40H48A16,16,0,0,0,32,56v56c0,52.72,25.52,84.67,46.93,102.19,23.06,18.86,46,25.26,47,25.53a8,8,0,0,0,4.2,0c1-.27,23.91-6.67,47-25.53C198.48,196.67,224,164.72,224,112V56A16,16,0,0,0,208,40Zm0,72c0,37.07-13.66,67.16-40.6,89.42A129.3,129.3,0,0,1,128,223.62a128.25,128.25,0,0,1-38.92-21.81C61.82,179.51,48,149.3,48,112l0-56,160,0ZM82.34,141.66a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32l-56,56a8,8,0,0,1-11.32,0Z"></path></svg>
+                  <h3 class="text-lg font-heading text-foreground">接続情報</h3>
+                </div>
+                <div class="space-y-2 text-sm md:text-base">
+                  <p class="text-muted-foreground"><span class="text-foreground font-semibold">Eagler IP:</span> wss://shadowflare.hidenPlay.net</p>
+                  <p class="text-muted-foreground"><span class="text-foreground font-semibold">Java IP:</span> shadowflare.opik.net</p>
+                  <p class="text-muted-foreground"><span class="text-foreground font-semibold">Java IP (EU):</span> mc.shadowflare.cloud-ip.cc</p>
+                  <p class="text-muted-foreground"><span class="text-foreground font-semibold">対応バージョン:</span> 1.5.2 〜 1.26</p>
+                  <p class="text-muted-foreground"><span class="text-foreground font-semibold">メイン対応:</span> Minecraft 1.21.11</p>
+                </div>
+              </div>
+            </div>
+            <div class="text-card-foreground shadow bg-card border border-border rounded-xl">
+              <div class="p-6 space-y-4">
+                <h3 class="text-lg font-heading text-foreground">掲載情報</h3>
+                <div class="space-y-3 text-sm md:text-base text-muted-foreground">
+                  <p>Top Eagler Servers:<a class="ml-1 text-primary hover:underline" href="https://topeaglerservers.com/server/2e268d01/Cracked-Survival-ShadowFlare" rel="noreferrer" target="_blank">Cracked Survival - ShadowFlare</a></p>
+                  <p>Minecraft Server List:<a class="ml-1 text-primary hover:underline" href="https://minecraft-server-list.com/server/522304/" rel="noreferrer" target="_blank">Server #522304</a></p>
+                  <p>Bedrock IP (Beta): coming soon</p>
+                </div>
+                <div class="pt-2 flex flex-wrap gap-2">
+                  <div class="inline-flex items-center border px-2.5 py-0.5 text-xs font-semibold border-transparent bg-secondary text-secondary-foreground rounded-full">24/7 Uptime</div>
+                  <div class="inline-flex items-center border px-2.5 py-0.5 text-xs font-semibold border-transparent bg-secondary text-secondary-foreground rounded-full">Low Ping</div>
+                  <div class="inline-flex items-center border px-2.5 py-0.5 text-xs font-semibold border-transparent bg-secondary text-secondary-foreground rounded-full">Cracked Survival</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+            <div class="text-card-foreground shadow bg-card/70 border border-border rounded-xl">
+              <div class="p-5 flex items-start gap-4">
+                <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+                  <svg class="text-primary" fill="currentColor" height="20" viewBox="0 0 256 256" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M224,128a96,96,0,1,1-96-96A96,96,0,0,1,224,128Z" opacity="0.2"></path><path d="M128,24h0A104,104,0,1,0,232,128,104.12,104.12,0,0,0,128,24Zm88,104a87.61,87.61,0,0,1-3.33,24H174.16a157.44,157.44,0,0,0,0-48h38.51A87.61,87.61,0,0,1,216,128ZM102,168H154a115.11,115.11,0,0,1-26,45A115.27,115.27,0,0,1,102,168Zm-3.9-16a140.84,140.84,0,0,1,0-48h59.88a140.84,140.84,0,0,1,0,48ZM40,128a87.61,87.61,0,0,1,3.33-24H81.84a157.44,157.44,0,0,0,0,48H43.33A87.61,87.61,0,0,1,40,128ZM154,88H102a115.11,115.11,0,0,1,26-45A115.27,115.27,0,0,1,154,88Zm52.33,0H170.71a135.28,135.28,0,0,0-22.3-45.6A88.29,88.29,0,0,1,206.37,88ZM107.59,42.4A135.28,135.28,0,0,0,85.29,88H49.63A88.29,88.29,0,0,1,107.59,42.4ZM49.63,168H85.29a135.28,135.28,0,0,0,22.3,45.6A88.29,88.29,0,0,1,49.63,168Zm98.78,45.6a135.28,135.28,0,0,0,22.3-45.6h35.66A88.29,88.29,0,0,1,148.41,213.6Z"></path></svg>
+                </div>
+                <div>
+                  <h4 class="text-base md:text-lg font-heading text-foreground leading-snug">Survival SMP</h4>
+                  <p class="text-sm md:text-base text-muted-foreground leading-relaxed mt-1">資源収集、拠点建築、探索を軸にしたメインのサバイバルモード。</p>
+                </div>
+              </div>
+            </div>
+            <div class="text-card-foreground shadow bg-card/70 border border-border rounded-xl">
+              <div class="p-5 flex items-start gap-4">
+                <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+                  <svg class="text-primary" fill="currentColor" height="20" viewBox="0 0 256 256" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M128,32a96,96,0,1,0,96,96A96,96,0,0,0,128,32Zm16,112L80,176l32-64,64-32Z" opacity="0.2"></path><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216ZM172.42,72.84l-64,32a8.05,8.05,0,0,0-3.58,3.58l-32,64A8,8,0,0,0,80,184a8.1,8.1,0,0,0,3.58-.84l64-32a8.05,8.05,0,0,0,3.58-3.58l32-64a8,8,0,0,0-10.74-10.74ZM138,138,97.89,158.11,118,118l40.15-20.07Z"></path></svg>
+                </div>
+                <div>
+                  <h4 class="text-base md:text-lg font-heading text-foreground leading-snug">RTP Exploration</h4>
+                  <p class="text-sm md:text-base text-muted-foreground leading-relaxed mt-1">ランダムテレポートで新天地を開拓し、自分だけの拠点候補を探せます。</p>
+                </div>
+              </div>
+            </div>
+            <div class="text-card-foreground shadow bg-card/70 border border-border rounded-xl">
+              <div class="p-5 flex items-start gap-4">
+                <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+                  <svg class="text-primary" fill="currentColor" height="20" viewBox="0 0 256 256" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M136,108A52,52,0,1,1,84,56,52,52,0,0,1,136,108Z" opacity="0.2"></path><path d="M117.25,157.92a60,60,0,1,0-66.5,0A95.83,95.83,0,0,0,3.53,195.63a8,8,0,1,0,13.4,8.74,80,80,0,0,1,134.14,0,8,8,0,0,0,13.4-8.74A95.83,95.83,0,0,0,117.25,157.92ZM40,108a44,44,0,1,1,44,44A44.05,44.05,0,0,1,40,108Zm210.14,98.7a8,8,0,0,1-11.07-2.33A79.83,79.83,0,0,0,172,168a8,8,0,0,1,0-16,44,44,0,1,0-16.34-84.87,8,8,0,1,1-5.94-14.85,60,60,0,0,1,55.53,105.64,95.83,95.83,0,0,1,47.22,37.71A8,8,0,0,1,250.14,206.7Z"></path></svg>
+                </div>
+                <div>
+                  <h4 class="text-base md:text-lg font-heading text-foreground leading-snug">Clans / Duels / Crystal PvP</h4>
+                  <p class="text-sm md:text-base text-muted-foreground leading-relaxed mt-1">クランで協力しつつ、1v1デュエルやCrystal PvPで実力勝負が可能です。</p>
+                </div>
+              </div>
+            </div>
+            <div class="text-card-foreground shadow bg-card/70 border border-border rounded-xl">
+              <div class="p-5 flex items-start gap-4">
+                <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+                  <svg class="text-primary" fill="currentColor" height="20" viewBox="0 0 256 256" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M141.66,201,129,213.66a8,8,0,0,1-11.32,0L92,188,58.35,221.66a8,8,0,0,1-11.32,0L34.34,209a8,8,0,0,1,0-11.31L68,164,42.34,138.36a8,8,0,0,1,0-11.32L55,114.34a8,8,0,0,1,11.32,0l75.3,75.3A8,8,0,0,1,141.66,201Z" opacity="0.2"></path><path d="M216,32H152a8,8,0,0,0-6.34,3.12l-64,83.21L72,108.69a16,16,0,0,0-22.64,0l-12.69,12.7a16,16,0,0,0,0,22.63l20,20-28,28a16,16,0,0,0,0,22.63l12.69,12.68a16,16,0,0,0,22.62,0l28-28,20,20a16,16,0,0,0,22.64,0l12.69-12.7a16,16,0,0,0,0-22.63l-9.64-9.64,83.21-64A8,8,0,0,0,224,104V40A8,8,0,0,0,216,32ZM52.69,216,40,203.32l28-28L80.68,188Zm70.61-8L48,132.71,60.7,120,136,195.31ZM208,100.06l-81.74,62.88L115.32,152l50.34-50.34a8,8,0,0,0-11.32-11.31L104,140.68,93.07,129.74,155.94,48H208Z"></path></svg>
+                </div>
+                <div>
+                  <h4 class="text-base md:text-lg font-heading text-foreground leading-snug">自由度の高いルール</h4>
+                  <p class="text-sm md:text-base text-muted-foreground leading-relaxed mt-1">X-Ray許可、Grief許可、Keep Inventory有効、Rank Freeの運用方針。</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="text-center text-xs md:text-sm text-muted-foreground mt-10">ShadowFlare — Build. Survive. Fight. Become Legendary. / DeltaClient Coming Soon! / Eaglercraft 1.14.4 Optifine WebPorted --WASM</p>
+        </div>
+      </section>
+
+      <!-- Performance -->
+      <section class="relative bg-background py-20 px-4 md:px-8 lg:px-16 overflow-hidden" id="performance-note">
+        <div class="absolute inset-0 pointer-events-none select-none">
+          <img alt="Optimized render layers with disabled effects" class="w-full h-full object-cover opacity-5 blur-2xl scale-110" loading="lazy" src="https://c.animaapp.com/msmfiabbScmx2E/img/ai_3.png">
+          <div class="absolute inset-0 bg-background/80"></div>
+        </div>
+        <div class="relative z-10 max-w-2xl mx-auto flex flex-col items-center text-center">
+          <span class="text-xs md:text-sm uppercase tracking-widest text-muted-foreground mb-4 font-sans">Design Philosophy</span>
+          <h2 class="text-3xl md:text-4xl font-heading tracking-tight leading-tight text-foreground mb-4">快適性を優先した設計</h2>
+          <p class="text-base md:text-lg text-muted-foreground mb-12 max-w-prose">Delta Clientは「動く」ことより「快適に動き続ける」ことを重視します。<br class="hidden md:block">シンプルな構成で、プレイに集中できる環境を届けます。</p>
+          <div class="w-full flex flex-col gap-6">
+            <div class="group bg-card border border-border rounded-xl p-6 text-left flex gap-5 items-start transition-all duration-300 ease-out hover:-translate-y-0.5 hover:shadow-md">
+              <div class="flex-shrink-0 mt-0.5 w-10 h-10 rounded-lg bg-muted flex items-center justify-center">
+                <svg class="text-primary" fill="currentColor" height="22" viewBox="0 0 256 256" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M216,56v56c0,96-88,120-88,120S40,208,40,112V56a8,8,0,0,1,8-8H208A8,8,0,0,1,216,56Z" opacity="0.2"></path><path d="M208,40H48A16,16,0,0,0,32,56v56c0,52.72,25.52,84.67,46.93,102.19,23.06,18.86,46,25.27,47,25.53a8,8,0,0,0,4.2,0c1-.26,23.91-6.67,47-25.53C198.48,196.67,224,164.72,224,112V56A16,16,0,0,0,208,40Zm0,72c0,37.07-13.66,67.16-40.6,89.42A129.3,129.3,0,0,1,128,223.62a128.25,128.25,0,0,1-38.92-21.81C61.82,179.51,48,149.3,48,112l0-56,160,0Z"></path></svg>
+              </div>
+              <div class="flex flex-col gap-1.5">
+                <div class="flex items-center gap-2 flex-wrap">
+                  <h3 class="text-base md:text-lg font-heading leading-snug text-foreground">シェーダー・重描画は無効化</h3>
+                  <div class="inline-flex items-center border font-semibold border-transparent bg-secondary text-secondary-foreground text-xs px-2 py-0.5 rounded-full">安定性優先</div>
+                </div>
+                <p class="text-sm md:text-base text-muted-foreground leading-relaxed">最大パフォーマンスを維持するため、シェーダーや重い視覚エフェクトは意図的に無効化されています。派手な演出より、安定した60fpsの体験を選びました。</p>
+              </div>
+            </div>
+            <div class="group bg-card border border-border rounded-xl p-6 text-left flex gap-5 items-start transition-all duration-300 ease-out hover:-translate-y-0.5 hover:shadow-md">
+              <div class="flex-shrink-0 mt-0.5 w-10 h-10 rounded-lg bg-muted flex items-center justify-center">
+                <svg class="text-primary" fill="currentColor" height="22" viewBox="0 0 256 256" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M96,240l16-80L48,136,160,16,144,96l64,24Z" opacity="0.2"></path><path d="M215.79,118.17a8,8,0,0,0-5-5.66L153.18,90.9l14.66-73.33a8,8,0,0,0-13.69-7l-112,120a8,8,0,0,0,3,13l57.63,21.61L88.16,238.43a8,8,0,0,0,13.69,7l112-120A8,8,0,0,0,215.79,118.17ZM109.37,214l10.47-52.38a8,8,0,0,0-5-9.06L62,132.71l84.62-90.66L136.16,94.43a8,8,0,0,0,5,9.06l52.8,19.8Z"></path></svg>
+              </div>
+              <div class="flex flex-col gap-1.5">
+                <div class="flex items-center gap-2 flex-wrap">
+                  <h3 class="text-base md:text-lg font-heading leading-snug text-foreground">軽快な描画、スムーズな表示</h3>
+                  <div class="inline-flex items-center border font-semibold border-transparent bg-secondary text-secondary-foreground text-xs px-2 py-0.5 rounded-full">Optifine同梱</div>
+                </div>
+                <p class="text-sm md:text-base text-muted-foreground leading-relaxed">Optifineをビルトインで組み込むことで、バニラより大幅に描画効率が向上。重いシーンでもフレームが崩れにくく、プレイ感覚がなめらかに保たれます。</p>
+              </div>
+            </div>
+            <div class="group bg-card border border-border rounded-xl p-6 text-left flex gap-5 items-start transition-all duration-300 ease-out hover:-translate-y-0.5 hover:shadow-md">
+              <div class="flex-shrink-0 mt-0.5 w-10 h-10 rounded-lg bg-muted flex items-center justify-center">
+                <svg class="text-primary" fill="currentColor" height="22" viewBox="0 0 256 256" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M224,128a96,96,0,1,1-96-96A96,96,0,0,1,224,128Z" opacity="0.2"></path><path d="M128,24h0A104,104,0,1,0,232,128,104.12,104.12,0,0,0,128,24Zm88,104a87.61,87.61,0,0,1-3.33,24H174.16a157.44,157.44,0,0,0,0-48h38.51A87.61,87.61,0,0,1,216,128ZM102,168H154a115.11,115.11,0,0,1-26,45A115.27,115.27,0,0,1,102,168Zm-3.9-16a140.84,140.84,0,0,1,0-48h59.88a140.84,140.84,0,0,1,0,48ZM40,128a87.61,87.61,0,0,1,3.33-24H81.84a157.44,157.44,0,0,0,0,48H43.33A87.61,87.61,0,0,1,40,128ZM154,88H102a115.11,115.11,0,0,1,26-45A115.27,115.27,0,0,1,154,88Zm52.33,0H170.71a135.28,135.28,0,0,0-22.3-45.6A88.29,88.29,0,0,1,206.37,88ZM107.59,42.4A135.28,135.28,0,0,0,85.29,88H49.63A88.29,88.29,0,0,1,107.59,42.4ZM49.63,168H85.29a135.28,135.28,0,0,0,22.3,45.6A88.29,88.29,0,0,1,49.63,168Zm98.78,45.6a135.28,135.28,0,0,0,22.3-45.6h35.66A88.29,88.29,0,0,1,148.41,213.6Z"></path></svg>
+              </div>
+              <div class="flex flex-col gap-1.5">
+                <div class="flex items-center gap-2 flex-wrap">
+                  <h3 class="text-base md:text-lg font-heading leading-snug text-foreground">つながりたい環境に、素直につながる</h3>
+                  <div class="inline-flex items-center border font-semibold border-transparent bg-secondary text-secondary-foreground text-xs px-2 py-0.5 rounded-full">1.14.4 Protocol</div>
+                </div>
+                <p class="text-sm md:text-base text-muted-foreground leading-relaxed">1.14.4のプロトコルに完全対応。対応サーバーへの接続が余計な設定なしにそのまま機能します。環境を選ばず、プレイしたいときにすぐ入れる安心感。</p>
+              </div>
+            </div>
+          </div>
+          <div class="mt-16 w-16 h-px bg-border mx-auto"></div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="relative overflow-hidden border-t border-border" id="footer">
+      <div class="absolute inset-0 z-0">
+        <img alt="Blurred rotating block world panorama" class="w-full h-full object-cover opacity-10 blur-md scale-105" loading="lazy" src="https://c.animaapp.com/msmfiabbScmx2E/img/ai_1.png">
+        <div class="absolute inset-0 bg-card/90"></div>
+      </div>
+      <div class="relative z-10 max-w-7xl mx-auto px-4 md:px-8 lg:px-16 py-6">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-6 md:gap-4">
+          <div class="flex flex-col items-center md:items-start gap-1">
+            <span class="font-heading text-base font-semibold text-foreground tracking-tight leading-none">DeltaClient</span>
+            <span class="text-xs text-muted-foreground tracking-wide">Eaglercraft 1.14.4 / OptiFine内蔵</span>
+          </div>
+          <div class="flex items-center gap-6">
+            <a class="text-xs text-muted-foreground uppercase tracking-wide transition-all duration-200 ease-out hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm" href="#protocol-and-speed">対応情報</a>
+            <a class="text-xs text-muted-foreground uppercase tracking-wide transition-all duration-200 ease-out hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm" href="#performance-note">動作方針</a>
+            <button type="button" data-play-btn class="inline-flex items-center gap-2 bg-primary text-primary-foreground text-sm font-semibold px-5 py-2 rounded-full shadow-md transition-all duration-200 ease-out hover:-translate-y-0.5 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2">
+              <svg fill="currentColor" height="16" viewBox="0 0 256 256" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M128,32a96,96,0,1,0,96,96A96,96,0,0,0,128,32ZM108,168V88l64,40Z" opacity="0.2"></path><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm48.24-94.78-64-40A8,8,0,0,0,100,88v80a8,8,0,0,0,12.24,6.78l64-40a8,8,0,0,0,0-13.56ZM116,153.57V102.43L156.91,128Z"></path></svg>
+              Play Now
+            </button>
+          </div>
+          <div class="flex items-center gap-3">
+            <a aria-label="Discord" class="flex items-center justify-center w-8 h-8 rounded-lg bg-muted text-muted-foreground border border-border transition-all duration-200 ease-out hover:-translate-y-0.5 hover:bg-accent hover:text-accent-foreground hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2" href="https://discord.gg/" rel="noopener noreferrer" target="_blank">
+              <svg fill="currentColor" height="16" viewBox="0 0 256 256" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M235.21,185.59l-67,29.7a8.15,8.15,0,0,1-11-4.56L147,183.06a190.5,190.5,0,0,1-19,.94,190.5,190.5,0,0,1-19-.94L98.75,210.73a8.15,8.15,0,0,1-11,4.56l-67-29.7a8,8,0,0,1-4.55-9.24L45.77,60A8.08,8.08,0,0,1,52.31,54l36.06-5.92a8.1,8.1,0,0,1,9.21,6l5,19.63a192.32,192.32,0,0,1,50.88,0l5-19.63a8.1,8.1,0,0,1,9.21-6L203.69,54A8.08,8.08,0,0,1,210.23,60l29.53,116.37A8,8,0,0,1,235.21,185.59Z" opacity="0.2"></path><path d="M104,140a12,12,0,1,1-12-12A12,12,0,0,1,104,140Zm60-12a12,12,0,1,0,12,12A12,12,0,0,0,164,128Zm74.45,64.9-67,29.71a16.17,16.17,0,0,1-21.71-9.1l-8.11-22q-6.72.45-13.63.46t-13.63-.46l-8.11,22a16.18,16.18,0,0,1-21.71,9.1l-67-29.71a15.94,15.94,0,0,1-9.06-18.51L38,58A16.08,16.08,0,0,1,51,46.13l36.06-5.92a16.21,16.21,0,0,1,18.26,11.88l3.26,12.83Q118.11,64,128,64t19.4.92l3.26-12.83a16.22,16.22,0,0,1,18.26-11.88L205,46.13A16.08,16.08,0,0,1,218,58l29.53,116.38A15.94,15.94,0,0,1,238.45,192.9ZM232,178.28,202.47,62s0,0-.08,0L166.33,56a.17.17,0,0,0-.17,0l-2.83,11.14c5,.94,10,2.06,14.83,3.42A8,8,0,0,1,176,86.31a8.09,8.09,0,0,1-2.16-.3A172.25,172.25,0,0,0,128,80a172.25,172.25,0,0,0-45.84,6,8,8,0,1,1-4.32-15.4c4.82-1.36,9.78-2.48,14.82-3.42L89.83,56a.21.21,0,0,0-.12,0h0L53.61,61.92a.24.24,0,0,0-.09,0L24,178.33,91,208a.21.21,0,0,0,.22,0L98,189.72a173.2,173.2,0,0,1-20.14-4.32A8,8,0,0,1,82.16,170,171.85,171.85,0,0,0,128,176a171.85,171.85,0,0,0,45.84-6,8,8,0,0,1,4.32,15.41A173.2,173.2,0,0,1,158,189.72L164.75,208a.22.22,0,0,0,.21,0Z"></path></svg>
+            </a>
+            <a aria-label="GitHub" class="flex items-center justify-center w-8 h-8 rounded-lg bg-muted text-muted-foreground border border-border transition-all duration-200 ease-out hover:-translate-y-0.5 hover:bg-accent hover:text-accent-foreground hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2" href="https://github.com/" rel="noopener noreferrer" target="_blank">
+              <svg fill="currentColor" height="16" viewBox="0 0 256 256" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M208,104v8a48,48,0,0,1-48,48H136a32,32,0,0,1,32,32v40H104V192a32,32,0,0,1,32-32H112a48,48,0,0,1-48-48v-8a49.28,49.28,0,0,1,8.51-27.3A51.92,51.92,0,0,1,76,32a52,52,0,0,1,43.83,24h32.34A52,52,0,0,1,196,32a51.92,51.92,0,0,1,3.49,44.7A49.28,49.28,0,0,1,208,104Z" opacity="0.2"></path><path d="M208.3,75.68A59.74,59.74,0,0,0,202.93,28,8,8,0,0,0,196,24a59.75,59.75,0,0,0-48,24H124A59.75,59.75,0,0,0,76,24a8,8,0,0,0-6.93,4,59.78,59.78,0,0,0-5.38,47.68A58.14,58.14,0,0,0,56,104v8a56.06,56.06,0,0,0,48.44,55.47A39.8,39.8,0,0,0,96,192v8H72a24,24,0,0,1-24-24A40,40,0,0,0,8,136a8,8,0,0,0,0,16,24,24,0,0,1,24,24,40,40,0,0,0,40,40H96v16a8,8,0,0,0,16,0V192a24,24,0,0,1,48,0v40a8,8,0,0,0,16,0V192a39.8,39.8,0,0,0-8.44-24.53A56.06,56.06,0,0,0,216,112v-8A58,58,0,0,0,208.3,75.68ZM200,112a40,40,0,0,1-40,40H112a40,40,0,0,1-40-40v-8a41.74,41.74,0,0,1,6.9-22.48A8,8,0,0,0,80,73.83a43.81,43.81,0,0,1,.79-33.58,43.88,43.88,0,0,1,32.32,20.06A8,8,0,0,0,119.82,64h32.35a8,8,0,0,0,6.74-3.69,43.87,43.87,0,0,1,32.32-20.06A43.81,43.81,0,0,1,192,73.83a8.09,8.09,0,0,0,1,7.65A41.76,41.76,0,0,1,200,104Z"></path></svg>
+            </a>
+          </div>
+        </div>
+        <div class="mt-5 pt-4 border-t border-border/40 flex justify-center">
+          <p class="text-xs text-muted-foreground/60 tracking-wide">DeltaClient 1.14.4を、迷わずすぐにプレイ</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+</div>
+
+<!-- Game overlay (fullscreen iframe) -->
+<div id="game-overlay" class="fixed inset-0 z-[9999] bg-black hidden">
+  <button type="button" id="game-close-btn" aria-label="ゲームを閉じる" class="absolute top-4 right-4 z-[10000] h-11 w-11 rounded-full bg-black/70 text-white text-2xl leading-none border border-white/30 hover:bg-black/85 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80">×</button>
+  <iframe id="game-iframe" title="ShadowFlare DeltaClient 1.14.4" class="w-full h-full border-0" loading="eager" allowfullscreen></iframe>
+</div>
+
+<script>
+(function () {
+  // ===== 設定 =====
+  // GitHub Pages 用: リポジトリ直下に game/ フォルダを置き、
+  // その中に wasm-gc_...html と依存ファイルを配置してください。
+  // ルートが https://user.github.io/repo/ の場合は相対パスで動きます。
+  var GAME_HTML = "game/wasm-gc_shadowflareclient-hash-934htqtguo3qwgy985hgqw3589.html";
+  var GAME_BASE = "game/";
+
+  var loading = false;
+  var open = false;
+  var blobUrl = null;
+
+  var overlay = document.getElementById("game-overlay");
+  var iframe = document.getElementById("game-iframe");
+  var closeBtn = document.getElementById("game-close-btn");
+  var errorEl = document.getElementById("play-error");
+  var playBtns = document.querySelectorAll("[data-play-btn]");
+
+  function setLoading(on) {
+    loading = on;
+    playBtns.forEach(function (btn) {
+      btn.disabled = on;
+      if (btn.id === "main-play-btn") {
+        btn.textContent = on ? "起動中..." : "今すぐプレイ";
+      }
+    });
+  }
+
+  function showError(msg) {
+    if (!errorEl) return;
+    if (msg) {
+      errorEl.textContent = msg;
+      errorEl.classList.remove("hidden");
+    } else {
+      errorEl.textContent = "";
+      errorEl.classList.add("hidden");
+    }
+  }
+
+  function closeGame() {
+    open = false;
+    overlay.classList.add("hidden");
+    iframe.removeAttribute("src");
+    document.body.style.overflow = "";
+    if (blobUrl) {
+      URL.revokeObjectURL(blobUrl);
+      blobUrl = null;
+    }
+    showError(null);
+  }
+
+  async function startGame() {
+    if (loading || open) return;
+    setLoading(true);
+    showError(null);
+    try {
+      var res = await fetch(GAME_HTML, { cache: "no-store" });
+      if (!res.ok) throw new Error("Failed to load game HTML (" + res.status + ")");
+      var html = await res.text();
+      if (!/<base\s/i.test(html)) {
+        html = html.replace(/<head>/i, '<head><base href="' + GAME_BASE + '">');
+      }
+      if (blobUrl) URL.revokeObjectURL(blobUrl);
+      blobUrl = URL.createObjectURL(new Blob([html], { type: "text/html" }));
+      iframe.src = blobUrl;
+      overlay.classList.remove("hidden");
+      document.body.style.overflow = "hidden";
+      open = true;
+    } catch (e) {
+      console.error(e);
+      showError("ゲームの起動に失敗しました。もう一度お試しください。");
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  playBtns.forEach(function (btn) {
+    btn.addEventListener("click", startGame);
+  });
+  closeBtn.addEventListener("click", closeGame);
+
+  // Esc で閉じる
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && open) closeGame();
+  });
+
+  // ヒーロー背景のゆっくり回転
+  var bg = document.getElementById("hero-bg-rotate");
+  if (bg) {
+    var rot = 0;
+    var last = null;
+    function tick(t) {
+      if (last !== null) {
+        rot = (rot + (t - last) * 0.004) % 360;
+        bg.style.transform = "rotate(" + rot + "deg) scale(1.25)";
+      }
+      last = t;
+      requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+})();
+</script>
+</body>
+</html>
