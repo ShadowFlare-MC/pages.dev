@@ -344,18 +344,16 @@
   <iframe id="game-iframe" title="ShadowFlare DeltaClient 1.14.4" class="w-full h-full border-0" loading="eager" allowfullscreen></iframe>
 </div>
 
+```html
 <script>
 (function () {
   // ===== 設定 =====
-  // GitHub Pages 用: リポジトリ直下に game/ フォルダを置き、
-  // その中に wasm-gc_...html と依存ファイルを配置してください。
-  // ルートが https://user.github.io/repo/ の場合は相対パスで動きます。
+  // GitHub Pages / Cloudflare Pages などで、
+  // index.html から見たゲーム本体の実URLを指定
   var GAME_HTML = "game/wasm-gc_shadowflareclient-hash-934htqtguo3qwgy985hgqw3589.html";
-  var GAME_BASE = "game/";
 
   var loading = false;
   var open = false;
-  var blobUrl = null;
 
   var overlay = document.getElementById("game-overlay");
   var iframe = document.getElementById("game-iframe");
@@ -365,8 +363,10 @@
 
   function setLoading(on) {
     loading = on;
+
     playBtns.forEach(function (btn) {
       btn.disabled = on;
+
       if (btn.id === "main-play-btn") {
         btn.textContent = on ? "起動中..." : "今すぐプレイ";
       }
@@ -375,6 +375,7 @@
 
   function showError(msg) {
     if (!errorEl) return;
+
     if (msg) {
       errorEl.textContent = msg;
       errorEl.classList.remove("hidden");
@@ -386,36 +387,53 @@
 
   function closeGame() {
     open = false;
+
     overlay.classList.add("hidden");
+
+    // ゲームを終了
     iframe.removeAttribute("src");
+
     document.body.style.overflow = "";
-    if (blobUrl) {
-      URL.revokeObjectURL(blobUrl);
-      blobUrl = null;
-    }
+
     showError(null);
   }
 
-  async function startGame() {
+  function startGame() {
     if (loading || open) return;
+
     setLoading(true);
     showError(null);
+
     try {
-      var res = await fetch(GAME_HTML, { cache: "no-store" });
-      if (!res.ok) throw new Error("Failed to load game HTML (" + res.status + ")");
-      var html = await res.text();
-      if (!/<base\s/i.test(html)) {
-        html = html.replace(/<head>/i, '<head><base href="' + GAME_BASE + '">');
-      }
-      if (blobUrl) URL.revokeObjectURL(blobUrl);
-      blobUrl = URL.createObjectURL(new Blob([html], { type: "text/html" }));
-      iframe.src = blobUrl;
+      /*
+       * Blob URLは使用しない。
+       *
+       * 実際のHTMLファイルをそのままiframeへ読み込むことで、
+       *
+       * game/
+       * ├─ wasm-gc_shadowflareclient-hash-934htqtguo3qwgy985hgqw3589.html
+       * ├─ eagruntime.js
+       * ├─ classes.js
+       * ├─ assets/
+       * ├─ wasm/
+       * └─ その他の依存ファイル
+       *
+       * のような相対パスを通常のHTTP URLとして解決できる。
+       */
+
+      iframe.src = GAME_HTML;
+
       overlay.classList.remove("hidden");
       document.body.style.overflow = "hidden";
+
       open = true;
+
     } catch (e) {
       console.error(e);
-      showError("ゲームの起動に失敗しました。もう一度お試しください。");
+
+      showError(
+        "ゲームの起動に失敗しました。もう一度お試しください。"
+      );
     } finally {
       setLoading(false);
     }
@@ -424,26 +442,34 @@
   playBtns.forEach(function (btn) {
     btn.addEventListener("click", startGame);
   });
+
   closeBtn.addEventListener("click", closeGame);
 
-  // Esc で閉じる
+  // Escで閉じる
   document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape" && open) closeGame();
+    if (e.key === "Escape" && open) {
+      closeGame();
+    }
   });
 
   // ヒーロー背景のゆっくり回転
   var bg = document.getElementById("hero-bg-rotate");
+
   if (bg) {
     var rot = 0;
     var last = null;
+
     function tick(t) {
       if (last !== null) {
         rot = (rot + (t - last) * 0.004) % 360;
-        bg.style.transform = "rotate(" + rot + "deg) scale(1.25)";
+        bg.style.transform =
+          "rotate(" + rot + "deg) scale(1.25)";
       }
+
       last = t;
       requestAnimationFrame(tick);
     }
+
     requestAnimationFrame(tick);
   }
 })();
