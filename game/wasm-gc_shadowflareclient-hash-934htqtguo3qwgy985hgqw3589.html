@@ -29,7 +29,7 @@
 					console.log("Downloading assets.epk...");
 					var assetsEPK;
 					try {
-						assetsEPK = new Uint8Array(await fetch("assets.epk").then(resp => resp.arrayBuffer()));
+						assetsEPK = new Uint8Array(await fetch("https://raw.githubusercontent.com/ShadowFlare-MC/epk/refs/heads/main/assets.epk").then(resp => resp.arrayBuffer()));
 					}catch(ex) {
 						alert("Could not download assets.epk!");
 						console.error("Could not download assets.epk!");
@@ -44,7 +44,7 @@
 						localesURI: "lang/",
 						worldsDB: "worlds",
 						servers: [
-							{ addr: "ws://localhost:8081/", name: "Local test server" }
+							{ addr: "wss://shadowflare.hidenplay.net", name: "ShadowFlare SMP (like Donut)" }
 						],
 						relays: [
 							{ addr: "wss://relay.deev.is/", comment: "lax1dude relay #1", primary: relayId === 0 },
