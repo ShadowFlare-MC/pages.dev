@@ -58,16 +58,16 @@
 							return eaglercraftXOpts;
 						},
 						getEagRuntimeJSURL: function() {
-							return "https://raw.githubusercontent.com/ShadowFlare-MC/epk/refs/heads/main/eagruntime.js";
+							return "eagruntime.js";
 						},
 						getClassesWASMURL: function() {
-							return "https://raw.githubusercontent.com/ShadowFlare-MC/epk/refs/heads/main/classes.wasm";
+							return "classes.wasm";
 						},
 						getClassesDeobfWASMURL: function() {
-							return "https://raw.githubusercontent.com/ShadowFlare-MC/epk/refs/heads/main/classes.wasm-deobfuscator.wasm";
+							return "classes.wasm-deobfuscator.wasm";
 						},
 						getClassesTEADBGURL: function() {
-							return "https://raw.githubusercontent.com/ShadowFlare-MC/epk/refs/heads/main/classes.wasm.teadbg";
+							return "classes.wasm.teadbg";
 						},
 						getEPKFiles: function() {
 							return [{
@@ -85,13 +85,13 @@
 						getImageURL: function(idx) {
 							switch(idx) {
 							case 0:
-								return "https://raw.githubusercontent.com/ShadowFlare-MC/epk/refs/heads/main/splash.png";
+								return "splash.png";
 							case 1:
-								return "https://raw.githubusercontent.com/ShadowFlare-MC/epk/refs/heads/main/pressAnyKey.png";
+								return "pressAnyKey.png";
 							case 2:
-								return "https://raw.githubusercontent.com/ShadowFlare-MC/epk/refs/heads/main/crashLogo.png";
+								return "crashLogo.png";
 							case 3:
-								return "https://raw.githubusercontent.com/ShadowFlare-MC/epk/refs/heads/main/favicon.png";
+								return "favicon.png";
 							default:
 								return null;
 							}
@@ -110,7 +110,7 @@
 					
 					const scriptElement = document.createElement("script");
 					scriptElement.type = "text/javascript";
-					scriptElement.src = new URL("https://raw.githubusercontent.com/ShadowFlare-MC/pages.dev/refs/heads/main/game/eagruntime.js", document.baseURI).href;
+					scriptElement.src = new URL("./eagruntime.js", document.baseURI).href;
 					document.head.appendChild(scriptElement);
 				}
 			});
