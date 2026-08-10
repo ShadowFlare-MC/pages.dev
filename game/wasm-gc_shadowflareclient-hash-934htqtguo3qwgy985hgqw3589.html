@@ -58,7 +58,7 @@
 							return eaglercraftXOpts;
 						},
 						getEagRuntimeJSURL: function() {
-							return "./eagruntime.js";
+							return "eagruntime.js";
 						},
 						getClassesWASMURL: function() {
 							return "classes.wasm";
@@ -110,7 +110,7 @@
 					
 					const scriptElement = document.createElement("script");
 					scriptElement.type = "text/javascript";
-					scriptElement.src = "eagruntime.js";
+					scriptElement.src = new URL("./eagruntime.js", document.baseURI).href;
 					document.head.appendChild(scriptElement);
 				}
 			});
