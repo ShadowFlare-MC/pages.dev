@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<title>DeltaClient - サーバーリスト</title>
+<meta content="DeltaClient サーバー" property="og:title">
+<meta content="website" property="og:type">
+<meta content="DeltaClient で利用可能なサーバー一覧。" property="og:description">
+<link rel="stylesheet" href="../docs/style.css">
+<style>
+.server-card {
+  background: rgba(0, 0, 0, 0.6);
+  border: 2px solid var(--border-color);
+  border-radius: 10px;
+  padding: 2rem;
+  margin: 1.5rem 0;
+  transition: all 0.3s;
+}
+
+.server-card:hover {
+  border-color: var(--primary-color);
+  box-shadow: 0 10px 30px var(--shadow);
+  transform: translateX(5px);
+}
+
+.server-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.server-name {
+  color: var(--primary-color);
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.server-status {
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.status-online {
+  background: #4caf50;
+  color: #fff;
+}
+
+.status-maintenance {
+  background: #ff9800;
+  color: #fff;
+}
+
+.status-offline {
+  background: #f44336;
+  color: #fff;
+}
+
+.server-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  margin: 1rem 0;
+  padding: 1rem 0;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.server-info-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.server-info-label {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 0.3rem;
+}
+
+.server-info-value {
+  color: var(--primary-color);
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.server-description {
+  color: var(--text-light);
+  line-height: 1.8;
+  margin: 1rem 0;
+}
+
+.server-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+.feature-tag {
+  background: rgba(100, 200, 255, 0.2);
+  color: var(--primary-color);
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  border: 1px solid var(--border-color);
+}
+
+.server-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.btn-join {
+  flex: 1;
+  padding: 0.8rem 1.5rem;
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+  color: var(--bg-color);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+.btn-join:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px var(--shadow);
+}
+
+.btn-info {
+  padding: 0.8rem 1.5rem;
+  background: rgba(100, 200, 255, 0.2);
+  color: var(--primary-color);
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+.btn-info:hover {
+  background: rgba(100, 200, 255, 0.3);
+  border-color: var(--primary-color);
+}
+
+.server-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.quick-stat {
+  background: rgba(100, 200, 255, 0.1);
+  border: 1px solid var(--border-color);
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.quick-stat-number {
+  font-size: 2rem;
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+.quick-stat-label {
+  color: var(--text-muted);
+  margin-top: 0.5rem;
+}
+
+.filter-section {
+  margin: 2rem 0;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 0.6rem 1rem;
+  background: rgba(100, 200, 255, 0.2);
+  color: var(--primary-color);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.filter-btn.active {
+  background: var(--primary-color);
+  color: var(--bg-color);
+  border-color: var(--primary-color);
+}
+
+.filter-btn:hover {
+  border-color: var(--primary-color);
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="header-content">
+    <a href="../index.html" class="logo">DeltaClient</a>
+    <nav>
+      <a href="../index.html">ホーム</a>
+      <a href="../docs/index.html">FAQ</a>
+      <a href="servers.html" class="active">サーバー</a>
+      <a href="community.html">コミュニティ</a>
+      <a href="../lol/index.html">遊び</a>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <section class="hero">
+    <h1>🌍 サーバーリスト</h1>
+    <p>DeltaClient で利用可能なサーバーをご紹介します。<br>
+    あなたに合ったサーバーを見つけて参加しましょう。</p>
+  </section>
+
+  <section class="section">
+    <h2>📊 サーバー統計</h2>
+    <div class="server-grid">
+      <div class="quick-stat">
+        <div class="quick-stat-number">8</div>
+        <div class="quick-stat-label">公開サーバー</div>
+      </div>
+      <div class="quick-stat">
+        <div class="quick-stat-number">500+</div>
+        <div class="quick-stat-label">アクティブプレイヤー</div>
+      </div>
+      <div class="quick-stat">
+        <div class="quick-stat-number">99.9%</div>
+        <div class="quick-stat-label">稼働率</div>
+      </div>
+      <div class="quick-stat">
+        <div class="quick-stat-number">24/7</div>
+        <div class="quick-stat-label">サーバー稼働</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>🔍 サーバー検索</h2>
+    
+    <div class="filter-section">
+      <button class="filter-btn active">すべて</button>
+      <button class="filter-btn">クリエイティブ</button>
+      <button class="filter-btn">サバイバル</button>
+      <button class="filter-btn">PvP</button>
+      <button class="filter-btn">プライベート</button>
+    </div>
+  </section>
+
+  <!-- サーバー 1 -->
+  <div class="server-card">
+    <div class="server-header">
+      <span class="server-name">🏗️ Build Paradise</span>
+      <span class="server-status status-online">オンライン</span>
+    </div>
+    <div class="server-info">
+      <div class="server-info-item">
+        <span class="server-info-label">プレイヤー数</span>
+        <span class="server-info-value">45/50</span>
+      </div>
+      <div class="server-info-item">
+        <span class="server-info-label">モード</span>
+        <span class="server-info-value">クリエイティブ</span>
+      </div>
+      <div class="server-info-item">
+        <span class="server-info-label">Ping</span>
+        <span class="server-info-value">&lt;20ms</span>
+      </div>
+      <div class="server-info-item">
+        <span class="server-info-label">言語</span>
+        <span class="server-info-value">日本語</span>
+      </div>
+    </div>
+    <p class="server-description">
+      無限のリソースで自由に建築できるサーバー。建築コンテストが定期的に開催されます。
+      初心者から上級ビルダーまで、誰でも楽しめる環境です。
+    </p>
+    <div class="server-features">
+      <span class="feature-tag">建築</span>
+      <span class="feature-tag">クリエイティブ</span>
+      <span class="feature-tag">初心者向け</span>
+      <span class="feature-tag">コンテスト</span>
+    </div>
+    <div class="server-actions">
+      <button class="btn-join">参加する</button>
+      <button class="btn-info">詳細</button>
+    </div>
+  </div>
+
+  <!-- サーバー 2 -->
+  <div class="server-card">
+    <div class="server-header">
+      <span class="server-name">⚔️ Survival Challenge</span>
+      <span class="server-status status-online">オンライン</span>
+    </div>
+    <div class="server-info">
+      <div class="server-info-item">
+        <span class="server-info-label">プレイヤー数</span>
+        <span class="server-info-value">32/40</span>
+      </div>
+      <div class="server-info-item">
+        <span class="server-info-label">モード</span>
+        <span class="server-info-value">サバイバル</span>
+      </div>
+      <div class="server-info-item">
+        <span class="server-info-label">Ping</span>
+        <span class="server-info-value">&lt;25ms</span>
+      </div>
+      <div class="server-info-item">
+        <span class="server-info-label">言語</span>
+        <span class="server-info-value">日本語</span>
+      </div>
+    </div>
+    <p class="server-description">
+      本物の Minecraft 体験。リソース収集、建築、戦闘など、すべての要素を楽しめます。
+      難度設定も複数から選べます。
+    </p>
+    <div class="server-features">
+      <span class="feature-tag">サバイバル</span>
+      <span class="feature-tag">チャレンジ</span>
+      <span class="feature-tag">経済システム</span>
+      <span class="feature-tag">ランキング</span>
+    </div>
+    <div class="server-actions">
+      <button class="btn-join">参加する</button>
+      <button class="btn-info">詳細</button>
+    </div>
+  </div>
+
+  <!-- サーバー 3 -->
+  <div class="server-card">
+    <div class="server-header">
+      <span class="server-name">🎯 PvP Arena</span>
+      <span class="server-status status-online">オンライン</span>
+    </div>
+    <div class="server-info">
+      <div class="server-info-item">
+        <span class="server-info-label">プレイヤー数</span>
+        <span class="server-info-value">28/50</span>
+      </div>
+      <div class="server-info-item">
+        <span class="server-info-label">モード</span>
+        <span class="server-info-value">PvP</span>
+      </div>
+      <div class="server-info-item">
+        <span class="server-info-label">Ping</span>
+        <span class="server-info-value">&lt;15ms</span>
+      </div>
+      <div class="server-info-item">
+        <span class="server-info-label">言語</span>
+        <span class="server-info-value">多言語</span>
+      </div>
+    </div>
+    <p class="server-description">
+      エキサイティングな PvP バトル。複数のゲームモードと、毎日のトーナメントが開催されます。
+      リーダーボードで競争順位を確認できます。
+    </p>
+    <div class="server-features">
+      <span class="feature-tag">PvP</span>
+      <span class="feature-tag">トーナメント</span>
+      <span class="feature-tag">競技性</span>
+      <span class="feature-tag">報酬</span>
+    </div>
+    <div class="server-actions">
+      <button class="btn-join">参加する</button>
+      <button class="btn-info">詳細</button>
+    </div>
+  </div>
+
+  <!-- サーバー 4 -->
+  <div class="server-card">
+    <div class="server-header">
+      <span class="server-name">🌲 Exploration World</span>
+      <span class="server-status status-online">オンライン</span>
+    </div>
+    <div class="server-info">
+      <div class="server-info-item">
+        <span class="server-info-label">プレイヤー数</span>
+        <span class="server-info-value">56/60</span>
+      </div>
+      <div class="server-info-item">
+        <span class="server-info-label">モード</span>
+        <span class="server-info-value">冒険</span>
+      </div>
+      <div class="server-info-item">
+        <span class="server-info-label">Ping</span>
+        <span class="server-info-value">&lt;30ms</span>
+      </div>
+      <div class="server-info-item">
+        <span class="server-info-label">言語</span>
+        <span class="server-info-value">日本語</span>
+      </div>
+    </div>
+    <p class="server-description">
+      広大で美しいワールドを探索するサーバー。ダンジョン、要塞、村など、様々なスポットを発見できます。
+      隠された宝物や秘密のクエストも用意されています。
+    </p>
+    <div class="server-features">
+      <span class="feature-tag">冒険</span>
+      <span class="feature-tag">探索</span>
+      <span class="feature-tag">クエスト</span>
+      <span class="feature-tag">宝探し</span>
+    </div>
+    <div class="server-actions">
+      <button class="btn-join">参加する</button>
+      <button class="btn-info">詳細</button>
+    </div>
+  </div>
+
+  <!-- サーバー 5 -->
+  <div class="server-card">
+    <div class="server-header">
+      <span class="server-name">🎪 Mini Games Hub</span>
+      <span class="server-status status-online">オンライン</span>
+    </div>
+    <div class="server-info">
+      <div class="server-info-item">
+        <span class="server-info-label">プレイヤー数</span>
+        <span class="server-info-value">89/100</span>
+      </div>
+      <div class="server-info-item">
+        <span class="server-info-label">モード</span>
+        <span class="server-info-value">ミニゲーム</span>
+      </div>
+      <div class="server-info-item">
+        <span class="server-info-label">Ping</span>
+        <span class="server-info-value">&lt;18ms</span>
+      </div>
+      <div class="server-info-item">
+        <span class="server-info-label">言語</span>
+        <span class="server-info-value">多言語</span>
+      </div>
+    </div>
+    <p class="server-description">
+      様々なミニゲームが楽しめるサーバー。スカイウォーズ、アーチャー、速度レースなど、
+      毎週新しいゲームが追加されます。
+    </p>
+    <div class="server-features">
+      <span class="feature-tag">ミニゲーム</span>
+      <span class="feature-tag">楽しい</span>
+      <span class="feature-tag">定期更新</span>
+      <span class="feature-tag">家族向け</span>
+    </div>
+    <div class="server-actions">
+      <button class="btn-join">参加する</button>
+      <button class="btn-info">詳細</button>
+    </div>
+  </div>
+
+  <!-- サーバー 6 -->
+  <div class="server-card">
+    <div class="server-header">
+      <span class="server-name">👨‍💼 Private Realm</span>
+      <span class="server-status status-maintenance">メンテナンス中</span>
+    </div>
+    <div class="server-info">
+      <div class="server-info-item">
+        <span class="server-info-label">プレイヤー数</span>
+        <span class="server-info-value">12/15</span>
+      </div>
+      <div class="server-info-item">
+        <span class="server-info-label">モード</span>
+        <span class="server-info-value">プライベート</span>
+      </div>
+      <div class="server-info-item">
+        <span class="server-info-label">Ping</span>
+        <span class="server-info-value">&lt;10ms</span>
+      </div>
+      <div class="server-info-item">
+        <span class="server-info-label">言語</span>
+        <span class="server-info-value">日本語</span>
+      </div>
+    </div>
+    <p class="server-description">
+      招待制のプライベートサーバー。身内やフレンド同士で楽しむ専用環境です。
+      カスタムゲームルールやMOD対応も可能。
+    </p>
+    <div class="server-features">
+      <span class="feature-tag">プライベート</span>
+      <span class="feature-tag">招待制</span>
+      <span class="feature-tag">カスタマイズ可</span>
+      <span class="feature-tag">低遅延</span>
+    </div>
+    <div class="server-actions">
+      <button class="btn-join" disabled style="opacity: 0.5;">参加不可</button>
+      <button class="btn-info">詳細</button>
+    </div>
+  </div>
+
+  <!-- サーバー 7 -->
+  <div class="server-card">
+    <div class="server-header">
+      <span class="server-name">🎓 Educational World</span>
+      <span class="server-status status-online">オンライン</span>
+    </div>
+    <div class="server-info">
+      <div class="server-info-item">
+        <span class="server-info-label">プレイヤー数</span>
+        <span class="server-info-value">23/30</span>
+      </div>
+      <div class="server-info-item">
+        <span class="server-info-label">モード</span>
+        <span class="server-info-value">教育</span>
+      </div>
+      <div class="server-info-item">
+        <span class="server-info-label">Ping</span>
+        <span class="server-info-value">&lt;22ms</span>
+      </div>
+      <div class="server-info-item">
+        <span class="server-info-label">言語</span>
+        <span class="server-info-value">日本語</span>
+      </div>
+    </div>
+    <p class="server-description">
+      教育用に特化したワールド。レッドストーン回路の学習、建築技法のチュートリアルなど、
+      スキルアップにぴったり。
+    </p>
+    <div class="server-features">
+      <span class="feature-tag">教育</span>
+      <span class="feature-tag">チュートリアル</span>
+      <span class="feature-tag">初心者向け</span>
+      <span class="feature-tag">学習</span>
+    </div>
+    <div class="server-actions">
+      <button class="btn-join">参加する</button>
+      <button class="btn-info">詳細</button>
+    </div>
+  </div>
+
+  <!-- サーバー 8 -->
+  <div class="server-card">
+    <div class="server-header">
+      <span class="server-name">🌙 Roleplay Kingdom</span>
+      <span class="server-status status-online">オンライン</span>
+    </div>
+    <div class="server-info">
+      <div class="server-info-item">
+        <span class="server-info-label">プレイヤー数</span>
+        <span class="server-info-value">41/50</span>
+      </div>
+      <div class="server-info-item">
+        <span class="server-info-label">モード</span>
+        <span class="server-info-value">ロールプレイ</span>
+      </div>
+      <div class="server-info-item">
+        <span class="server-info-label">Ping</span>
+        <span class="server-info-value">&lt;20ms</span>
+      </div>
+      <div class="server-info-item">
+        <span class="server-info-label">言語</span>
+        <span class="server-info-value">日本語</span>
+      </div>
+    </div>
+    <p class="server-description">
+      ロールプレイとストーリーテリング。王国での生活をシミュレート。貿易、政治、冒険など、
+      独自のルールで奥深い世界観を楽しめます。
+    </p>
+    <div class="server-features">
+      <span class="feature-tag">ロールプレイ</span>
+      <span class="feature-tag">ストーリー</span>
+      <span class="feature-tag">世界観</span>
+      <span class="feature-tag">コミュニティ</span>
+    </div>
+    <div class="server-actions">
+      <button class="btn-join">参加する</button>
+      <button class="btn-info">詳細</button>
+    </div>
+  </div>
+
+  <section class="section" style="text-align: center; margin-top: 4rem;">
+    <h2>新しいサーバーを作成したい？</h2>
+    <p style="font-size: 1.1rem;">自分のサーバーを立ち上げたい方は、ホストプログラムをご確認ください。</p>
+    <a href="../index.html" class="btn">ホームに戻る</a>
+  </section>
+</div>
+
+<footer>
+  <p>&copy; 2026 DeltaClient. All rights reserved. | 
+  <a href="../index.html">ホーム</a> | 
+  <a href="../docs/index.html">FAQ</a> | 
+  <a href="servers.html">サーバー</a></p>
+</footer>
+
+<script>
+// 参加ボタンのクリックハンドラ
+document.querySelectorAll('.btn-join').forEach(btn => {
+  btn.addEventListener('click', function() {
+    if (!this.disabled) {
+      alert('サーバーに接続中...\nゲームを起動してください。');
+    }
+  });
+});
+
+// フィルターボタンのハンドラ
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', function() {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    this.classList.add('active');
+  });
+});
+</script>
+</body>
+</html>

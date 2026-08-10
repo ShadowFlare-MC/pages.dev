@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<title>DeltaClient - コミュニティ</title>
+<meta content="DeltaClient コミュニティ" property="og:title">
+<meta content="website" property="og:type">
+<meta content="DeltaClient コミュニティに参加して、プレイヤーと交流しましょう。" property="og:description">
+<link rel="stylesheet" href="../docs/style.css">
+<style>
+.community-hero {
+  text-align: center;
+  padding: 3rem 2rem;
+  background: linear-gradient(180deg, rgba(100, 200, 255, 0.1) 0%, transparent 100%);
+  border-radius: 10px;
+  margin-bottom: 3rem;
+}
+
+.community-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.community-card {
+  background: rgba(0, 0, 0, 0.6);
+  border: 2px solid var(--border-color);
+  border-radius: 10px;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.3s;
+}
+
+.community-card:hover {
+  border-color: var(--primary-color);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px var(--shadow);
+}
+
+.community-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.community-card h3 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.community-card p {
+  color: var(--text-light);
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.social-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(100, 200, 255, 0.2);
+  color: var(--primary-color);
+  border: 2px solid var(--border-color);
+  cursor: pointer;
+  font-size: 1.5rem;
+  transition: all 0.3s;
+  text-decoration: none;
+}
+
+.social-btn:hover {
+  background: var(--primary-color);
+  color: var(--bg-color);
+  border-color: var(--primary-color);
+  transform: scale(1.2);
+}
+
+.event-card {
+  background: rgba(0, 0, 0, 0.6);
+  border-left: 4px solid var(--primary-color);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.event-date {
+  color: var(--primary-color);
+  font-weight: bold;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.event-title {
+  color: var(--text-color);
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.event-desc {
+  color: var(--text-light);
+  font-size: 0.9rem;
+}
+
+.member-spotlight {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.member-card {
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.member-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  font-size: 1.5rem;
+}
+
+.member-name {
+  color: var(--primary-color);
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.member-role {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.member-bio {
+  color: var(--text-light);
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
+.rules-box {
+  background: rgba(255, 193, 7, 0.1);
+  border-left: 4px solid #ffc107;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin: 2rem 0;
+}
+
+.rules-box h3 {
+  color: #ffc107;
+  margin-bottom: 1rem;
+}
+
+.rules-box ol {
+  color: var(--text-light);
+  padding-left: 2rem;
+  line-height: 1.8;
+}
+
+.rules-box li {
+  margin-bottom: 0.5rem;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.stat-box {
+  background: rgba(100, 200, 255, 0.1);
+  border: 1px solid var(--border-color);
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.stat-number {
+  font-size: 2rem;
+  color: var(--primary-color);
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="header-content">
+    <a href="../index.html" class="logo">DeltaClient</a>
+    <nav>
+      <a href="../index.html">ホーム</a>
+      <a href="../docs/index.html">FAQ</a>
+      <a href="community.html" class="active">コミュニティ</a>
+      <a href="../lol/index.html">遊び</a>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <section class="community-hero">
+    <h1>🤝 コミュニティ</h1>
+    <p>DeltaClient コミュニティへようこそ！<br>
+    世界中のプレイヤーと繋がり、一緒に楽しみましょう。</p>
+    <div class="social-links">
+      <a href="#" class="social-btn" title="Discord">💬</a>
+      <a href="#" class="social-btn" title="Twitter">🐦</a>
+      <a href="#" class="social-btn" title="YouTube">📺</a>
+      <a href="#" class="social-btn" title="Reddit">🔴</a>
+    </div>
+  </section>
+
+  <!-- コミュニティ統計 -->
+  <section class="section">
+    <h2>📊 コミュニティ統計</h2>
+    <div class="stats-grid">
+      <div class="stat-box">
+        <div class="stat-number">15K+</div>
+        <div class="stat-label">Discord メンバー</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number">500+</div>
+        <div class="stat-label">アクティブプレイヤー</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number">8</div>
+        <div class="stat-label">公開サーバー</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number">365</div>
+        <div class="stat-label">日々のプレイ</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- コミュニティの場所 -->
+  <section class="section">
+    <h2>🌐 コミュニティの場所</h2>
+    <div class="community-grid">
+      <div class="community-card">
+        <div class="community-icon">💬</div>
+        <h3>Discord</h3>
+        <p>公式 Discord サーバーでリアルタイムチャット。イベント情報、サーバーニュース、質問コーナーなど。</p>
+        <a href="#" class="btn btn-secondary">Discord に参加</a>
+      </div>
+
+      <div class="community-card">
+        <div class="community-icon">🐦</div>
+        <h3>Twitter / X</h3>
+        <p>最新のアップデート情報やイベント告知。フォローして最新情報をゲットしよう。</p>
+        <a href="#" class="btn btn-secondary">フォロー</a>
+      </div>
+
+      <div class="community-card">
+        <div class="community-icon">📺</div>
+        <h3>YouTube</h3>
+        <p>ゲームプレイ、チュートリアル、コミュニティ映像。プレイのテクニックを学べます。</p>
+        <a href="#" class="btn btn-secondary">チャンネル登録</a>
+      </div>
+
+      <div class="community-card">
+        <div class="community-icon">💻</div>
+        <h3>フォーラム</h3>
+        <p>議論、質問、アイデア投稿。コミュニティ主導で Minecraft の話題を深堀りします。</p>
+        <a href="#" class="btn btn-secondary">フォーラム</a>
+      </div>
+
+      <div class="community-card">
+        <div class="community-icon">🏆</div>
+        <h3>リーダーボード</h3>
+        <p>プレイヤーランキング。経験値、キル数、建築評価など複数の指標でランク付け。</p>
+        <a href="#" class="btn btn-secondary">ランキング</a>
+      </div>
+
+      <div class="community-card">
+        <div class="community-icon">📰</div>
+        <h3>ニュース</h3>
+        <p>DeltaClient の最新情報。サーバー更新、新イベント、バグ修正など。</p>
+        <a href="#" class="btn btn-secondary">ニュース</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- コミュニティ規則 -->
+  <div class="rules-box">
+    <h3>📋 コミュニティ規則</h3>
+    <ol>
+      <li><strong>他のプレイヤーを尊重する</strong> - 年齢、性別、背景に関わらず、すべてのプレイヤーを平等に扱う</li>
+      <li><strong>ハラスメント禁止</strong> - 侮辱的、嫌がらせ的、またはヘイトスピーチは許しません</li>
+      <li><strong>スパム禁止</strong> - 不必要な繰り返しメッセージは削除され、ペナルティが科されます</li>
+      <li><strong>不適切なコンテンツ禁止</strong> - ポルノ、違法、または暴力的なコンテンツの共有は禁止</li>
+      <li><strong>チートやハック禁止</strong> - 不正行為を使用したプレイヤーは永続的にバンされます</li>
+      <li><strong>プライバシー保護</strong> - 他のプレイヤーの個人情報を共有しない</li>
+      <li><strong>広告・スパム禁止</strong> - 他のサーバーや製品の宣伝は禁止（例外あり）</li>
+      <li><strong>ルール遵守</strong> - モデレーターの指示に従う</li>
+    </ol>
+  </div>
+
+  <!-- イベント -->
+  <section class="section">
+    <h2>🎉 今後のイベント</h2>
+    
+    <div class="event-card">
+      <div class="event-date">📅 2026年8月15日 - 8月22日</div>
+      <div class="event-title">🏗️ 建築コンテスト - Summer Edition</div>
+      <div class="event-desc">
+        テーマ「Summer Paradise」で夏らしい建築を作成。優勝者には限定アイテムと Discord バッジを授与。
+      </div>
+    </div>
+
+    <div class="event-card">
+      <div class="event-date">📅 2026年8月29日 19:00 JST</div>
+      <div class="event-title">⚔️ GrandPvP Tournament</div>
+      <div class="event-desc">
+        月例トーナメント。上位 3 名には賞品（限定スキン、ゲーム内通貨など）を贈呈。
+      </div>
+    </div>
+
+    <div class="event-card">
+      <div class="event-date">📅 2026年9月5日 - 9月12日</div>
+      <div class="event-title">🌲 Exploration Adventure Week</div>
+      <div class="event-desc">
+        新しいワールド探索。隠された宝物を見つけて報酬ゲット。家族向けイベント。
+      </div>
+    </div>
+
+    <div class="event-card">
+      <div class="event-date">📅 2026年9月20日 15:00 JST</div>
+      <div class="event-title">🎤 Community Voice Chat</div>
+      <div class="event-desc">
+        プレイヤーと開発チームのボイスチャット。要望、質問、フィードバックを直接共有。
+      </div>
+    </div>
+  </section>
+
+  <!-- メンバースポットライト -->
+  <section class="section">
+    <h2>⭐ メンバースポットライト</h2>
+    <p style="margin-bottom: 2rem;">コミュニティで活躍している素晴らしいプレイヤーをご紹介します。</p>
+    
+    <div class="member-spotlight">
+      <div class="member-card">
+        <div class="member-avatar">👑</div>
+        <div class="member-name">BuilderMax</div>
+        <div class="member-role">建築チャンピオン</div>
+        <div class="member-bio">圧倒的な建築技術で、毎月の建築コンテストで優勝。美しいメディエバル城が得意。</div>
+      </div>
+
+      <div class="member-card">
+        <div class="member-avatar">🎯</div>
+        <div class="member-name">PvPLegend</div>
+        <div class="member-role">PvP マスター</div>
+        <div class="member-bio">3 連続トーナメント優勝。スキルと戦略で常に最前線。初心者コーチもしている。</div>
+      </div>
+
+      <div class="member-card">
+        <div class="member-avatar">🔧</div>
+        <div class="member-name">TechWiz</div>
+        <div class="member-role">技術アドバイザー</div>
+        <div class="member-bio">レッドストーン回路の専門家。複雑な装置を設計し、チュートリアルも提供。</div>
+      </div>
+
+      <div class="member-card">
+        <div class="member-avatar">🎨</div>
+        <div class="member-name">ArtisticSoul</div>
+        <div class="member-role">アート担当</div>
+        <div class="member-bio">カラフルで創造的なテクスチャパックを制作。コミュニティに共有している。</div>
+      </div>
+
+      <div class="member-card">
+        <div class="member-avatar">📚</div>
+        <div class="member-name">GuideBook</div>
+        <div class="member-role">ガイド作成者</div>
+        <div class="member-bio">初心者向けガイドやチュートリアル動画を作成。ビギナーフレンドリーな提案が多い。</div>
+      </div>
+
+      <div class="member-card">
+        <div class="member-avatar">🤖</div>
+        <div class="member-name">CommunityMod</div>
+        <div class="member-role">モデレーター</div>
+        <div class="member-bio">コミュニティ管理に献身的。親切で公平なモデレーション。質問への回答も素早い。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- コンタクト -->
+  <section class="section" style="text-align: center;">
+    <h2>📮 お問い合わせ</h2>
+    <p style="margin-bottom: 2rem;">質問や提案がある場合は、お気軽にお問い合わせください。</p>
+    
+    <div class="cards">
+      <div class="card">
+        <h3>💌 メール</h3>
+        <p><a href="mailto:support@deltaclient.net" style="color: var(--primary-color);">support@deltaclient.net</a></p>
+      </div>
+
+      <div class="card">
+        <h3>💬 Discord</h3>
+        <p><a href="#" style="color: var(--primary-color);">公式サーバーに参加</a></p>
+      </div>
+
+      <div class="card">
+        <h3>📋 フォーム</h3>
+        <p><a href="#" style="color: var(--primary-color);">お問い合わせフォーム</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="text-align: center; margin-top: 4rem;">
+    <h2>コミュニティに参加しよう</h2>
+    <p style="font-size: 1.1rem;">DeltaClient コミュニティは、プレイヤーファーストの優しい環境です。<br>
+    初心者から上級者まで、みんなで楽しく遊べます。</p>
+    <a href="#" class="btn" style="margin-right: 1rem;">Discord に参加</a>
+    <a href="../index.html" class="btn btn-secondary">ホームに戻る</a>
+  </section>
+</div>
+
+<footer>
+  <p>&copy; 2026 DeltaClient. All rights reserved. | 
+  <a href="../index.html">ホーム</a> | 
+  <a href="../docs/index.html">FAQ</a> | 
+  <a href="community.html">コミュニティ</a></p>
+</footer>
+</body>
+</html>

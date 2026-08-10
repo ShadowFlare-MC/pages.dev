@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<title>DeltaClient Server - サーバー紹介</title>
+<meta content="DeltaClient Server Community" property="og:title">
+<meta content="website" property="og:type">
+<meta content="DeltaClient 1.14.4 サーバーコミュニティへようこそ。パフォーマンス特化の Eaglercraft 環境で、快適なマルチプレイを体験できます。" property="og:description">
+<meta content="DeltaClient 1.14.4 サーバーコミュニティへようこそ。パフォーマンス特化の Eaglercraft 環境で、快適なマルチプレイを体験できます。" name="description">
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  color: #e0e0e0;
+  line-height: 1.6;
+}
+
+header {
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid rgba(100, 200, 255, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #64c8ff;
+  text-decoration: none;
+}
+
+nav a {
+  color: #a0a0a0;
+  text-decoration: none;
+  margin-left: 2rem;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #64c8ff;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.hero {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: linear-gradient(180deg, rgba(100, 200, 255, 0.1) 0%, transparent 100%);
+  border-radius: 10px;
+  margin-bottom: 4rem;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #64c8ff;
+  text-shadow: 0 0 20px rgba(100, 200, 255, 0.3);
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: #b0b0b0;
+  margin-bottom: 2rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  background: linear-gradient(135deg, #64c8ff 0%, #4a9fd8 100%);
+  color: #1a1a2e;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(100, 200, 255, 0.3);
+}
+
+.section {
+  margin-bottom: 4rem;
+}
+
+.section h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #64c8ff;
+  border-bottom: 2px solid rgba(100, 200, 255, 0.3);
+  padding-bottom: 1rem;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(100, 200, 255, 0.3);
+  border-radius: 10px;
+  padding: 2rem;
+  transition: all 0.3s;
+}
+
+.card:hover {
+  border-color: rgba(100, 200, 255, 0.6);
+  box-shadow: 0 10px 30px rgba(100, 200, 255, 0.2);
+  transform: translateY(-5px);
+}
+
+.card h3 {
+  color: #64c8ff;
+  margin-bottom: 1rem;
+}
+
+.card p {
+  color: #b0b0b0;
+}
+
+footer {
+  text-align: center;
+  padding: 3rem 2rem;
+  border-top: 1px solid rgba(100, 200, 255, 0.2);
+  color: #707070;
+  margin-top: 4rem;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 2rem;
+  background: rgba(100, 200, 255, 0.05);
+  border: 1px solid rgba(100, 200, 255, 0.2);
+  border-radius: 10px;
+}
+
+.stat-number {
+  font-size: 2rem;
+  color: #64c8ff;
+  font-weight: bold;
+}
+
+.stat-label {
+  color: #a0a0a0;
+  margin-top: 0.5rem;
+}
+
+.highlight {
+  color: #64c8ff;
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="header-content">
+    <a href="../index.html" class="logo">DeltaClient</a>
+    <nav>
+      <a href="../index.html">ホーム</a>
+      <a href="../docs/index.html">FAQ</a>
+      <a href="../lol/index.html">遊び</a>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <section class="hero">
+    <h1>サーバーコミュニティへようこそ</h1>
+    <p>DeltaClient でいつでも、どこでも、ブラウザから即起動。<br>
+    1.14.4 プロトコル対応、OptiFine による高速描画で快適なマルチプレイ体験。</p>
+    <button class="btn">サーバーに参加する</button>
+  </section>
+
+  <section class="section">
+    <h2>📊 コミュニティ統計</h2>
+    <div class="stats">
+      <div class="stat-item">
+        <div class="stat-number">500+</div>
+        <div class="stat-label">アクティブプレイヤー</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">24/7</div>
+        <div class="stat-label">サーバー稼働</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">0ms</div>
+        <div class="stat-label">平均遅延</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">99.9%</div>
+        <div class="stat-label">稼働率</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>🎮 サーバーの特徴</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>⚡ 高速パフォーマンス</h3>
+        <p>OptiFine による最適化で、ブラウザでも快適な 60+ FPS でプレイ可能。低スペック環境にも対応しています。</p>
+      </div>
+      <div class="card">
+        <h3>🌍 マルチプレイ対応</h3>
+        <p>世界中のプレイヤーと同じサーバーで遊べます。フレンドと一緒に建築やアドベンチャーを楽しみましょう。</p>
+      </div>
+      <div class="card">
+        <h3>🔒 安全な環境</h3>
+        <p>プロプライエタリな モデレーション システムにより、安全で楽しいコミュニティを維持しています。</p>
+      </div>
+      <div class="card">
+        <h3>📦 豊富なコンテンツ</h3>
+        <p>プリセット、ワールド、モッドなど、様々なコンテンツを用意。毎週新しいイベントが開催されます。</p>
+      </div>
+      <div class="card">
+        <h3>💬 活発なコミュニティ</h3>
+        <p>Discord コミュニティでプレイヤー同士が交流。初心者から上級者まで、みんなで楽しく遊んでいます。</p>
+      </div>
+      <div class="card">
+        <h3>🚀 常時アップデート</h3>
+        <p>定期的なサーバー アップデートで、新機能やバグ修正を随時反映。最新の環境でプレイできます。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>🎯 始める前に</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>ステップ 1</h3>
+        <p>DeltaClient ランチャーにアクセスし、「プレイ開始」ボタンをクリック。ブラウザからすぐに起動します。</p>
+      </div>
+      <div class="card">
+        <h3>ステップ 2</h3>
+        <p>プレイヤー名を入力して、サーバーに接続。友人用のコードを生成して、フレンドを招待することもできます。</p>
+      </div>
+      <div class="card">
+        <h3>ステップ 3</h3>
+        <p>Discord コミュニティに参加しましょう。最新のイベント情報や、他のプレイヤーとの交流ができます。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>❓ よくある質問</h2>
+    <p>詳細な FAQ は <a href="../docs/index.html" style="color: #64c8ff; text-decoration: underline;">ドキュメント</a> をご覧ください。</p>
+  </section>
+</div>
+
+<footer>
+  <p>&copy; 2026 DeltaClient. All rights reserved. | 
+  <a href="../index.html" style="color: #64c8ff; text-decoration: none;">ホーム</a> | 
+  <a href="../docs/index.html" style="color: #64c8ff; text-decoration: none;">FAQ</a> | 
+  <a href="../lol/index.html" style="color: #64c8ff; text-decoration: none;">遊び</a></p>
+</footer>
+</body>
+</html>

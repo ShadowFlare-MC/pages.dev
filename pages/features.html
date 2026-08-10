@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<title>DeltaClient - 機能紹介</title>
+<meta content="DeltaClient 機能" property="og:title">
+<meta content="website" property="og:type">
+<meta content="DeltaClient の豊富な機能をご紹介します。" property="og:description">
+<link rel="stylesheet" href="../docs/style.css">
+<style>
+.feature-section {
+  margin: 3rem 0;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.feature-card {
+  background: rgba(0, 0, 0, 0.6);
+  border: 2px solid var(--border-color);
+  border-radius: 10px;
+  padding: 2rem;
+  transition: all 0.3s;
+}
+
+.feature-card:hover {
+  border-color: var(--primary-color);
+  box-shadow: 0 10px 30px var(--shadow);
+  transform: translateY(-5px);
+}
+
+.feature-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.feature-card p {
+  color: var(--text-light);
+  line-height: 1.8;
+}
+
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+  border: 2px solid var(--primary-color);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.comparison-table th {
+  background: rgba(100, 200, 255, 0.2);
+  color: var(--primary-color);
+  padding: 1rem;
+  text-align: left;
+  font-weight: bold;
+}
+
+.comparison-table td {
+  padding: 1rem;
+  border-top: 1px solid var(--border-color);
+  color: var(--text-light);
+}
+
+.comparison-table tr:hover {
+  background: rgba(100, 200, 255, 0.05);
+}
+
+.check {
+  color: #4caf50;
+  font-weight: bold;
+}
+
+.cross {
+  color: #ff6b6b;
+  font-weight: bold;
+}
+
+.spec-box {
+  background: rgba(100, 200, 255, 0.1);
+  border-left: 4px solid var(--primary-color);
+  padding: 1.5rem;
+  border-radius: 5px;
+  margin: 1.5rem 0;
+}
+
+.spec-box h4 {
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.spec-box p {
+  color: var(--text-light);
+  margin: 0.5rem 0;
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="header-content">
+    <a href="../index.html" class="logo">DeltaClient</a>
+    <nav>
+      <a href="../index.html">ホーム</a>
+      <a href="../docs/index.html">FAQ</a>
+      <a href="../server/index.html">サーバー</a>
+      <a href="features.html" class="active">機能</a>
+      <a href="../lol/index.html">遊び</a>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <section class="hero">
+    <h1>✨ 機能紹介</h1>
+    <p>DeltaClient が提供する豊富な機能をご紹介します。<br>
+    パフォーマンス特化と機能の充実を両立しました。</p>
+  </section>
+
+  <!-- コア機能 -->
+  <section class="feature-section">
+    <h2>🎮 コア機能</h2>
+    
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="feature-icon">🚀</div>
+        <h3>ブラウザで即起動</h3>
+        <p>インストール不要。ブラウザを開いて「プレイ開始」をクリックするだけで、すぐにゲームが始まります。</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">⚡</div>
+        <h3>高速パフォーマンス</h3>
+        <p>OptiFine による最適化で、ほとんどの環境で 60+ FPS を実現。低スペック PC でも快適にプレイできます。</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🌍</div>
+        <h3>マルチプレイ対応</h3>
+        <p>世界中のプレイヤーと同じサーバーで遊べます。フレンドと一緒に建築やアドベンチャーを楽しみましょう。</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">💾</div>
+        <h3>クラウドセーブ</h3>
+        <p>ワールドデータはサーバー側に保存されるため、別の PC からもアクセスできます。</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🔒</div>
+        <h3>セキュアな環境</h3>
+        <p>プロプライエタリなモデレーション システムで、安全で楽しいコミュニティを維持しています。</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">⚙️</div>
+        <h3>カスタマイズ可能</h3>
+        <p>グラフィック設定、操作設定など、自分の好みに合わせてカスタマイズできます。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- グラフィック機能 -->
+  <section class="feature-section">
+    <h2>🎨 グラフィック機能</h2>
+    
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="feature-icon">🖼️</div>
+        <h3>テクスチャパック対応</h3>
+        <p>様々なテクスチャパックを使用して、ゲームの見た目をカスタマイズできます。</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🌈</div>
+        <h3>視覚効果の最適化</h3>
+        <p>パフォーマンスを保ちながら、美しい視覚効果を実現しています。</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🔆</div>
+        <h3>フレームレート制御</h3>
+        <p>最大フレームレートを自由に設定して、CPU 使用率を調整できます。</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🎯</div>
+        <h3>レンダー距離調整</h3>
+        <p>視野距離をスペックに合わせて調整。低スペック環境でも快適にプレイできます。</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">💡</div>
+        <h3>ライティング最適化</h3>
+        <p>リアルタイムライティングを効率的に処理し、美しい照明を実現。</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🌙</div>
+        <h3>視認性改善</h3>
+        <p>暗い場所でも見やすい明度調整機能。夜間プレイも快適です。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ゲームプレイ機能 -->
+  <section class="feature-section">
+    <h2>🎮 ゲームプレイ機能</h2>
+    
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="feature-icon">🏗️</div>
+        <h3>クリエイティブモード</h3>
+        <p>無限のリソースで自由に建築。想像力のままに世界を作り上げることができます。</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">⚔️</div>
+        <h3>サバイバルモード</h3>
+        <p>リソースを集めて、敵と戦い、生き残る。真の Minecraft 体験。</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🎪</div>
+        <h3>アドベンチャーモード</h3>
+        <p>ワールドクリエイターが作成した特別なマップをプレイできます。</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🌱</div>
+        <h3>ワールド生成オプション</h3>
+        <p>カスタムワールドを生成。シード値やバイオーム設定を自由に設定できます。</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🗺️</div>
+        <h3>マップ機能</h3>
+        <p>ゲーム内でマップを作成して、探索を効率化します。</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">📍</div>
+        <h3>ウェイポイント</h3>
+        <p>重要な場所にウェイポイントを設定。迷わずに戻ることができます。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ネットワーク機能 -->
+  <section class="feature-section">
+    <h2>🌐 ネットワーク機能</h2>
+    
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="feature-icon">👥</div>
+        <h3>マルチプレイサーバー</h3>
+        <p>複数のプレイヤーと同じサーバーでプレイ。協力して大規模な建築ができます。</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">💬</div>
+        <h3>チャット機能</h3>
+        <p>ゲーム内チャットで他のプレイヤーと交流。サーバー全体と会話できます。</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">👫</div>
+        <h3>フレンドシステム</h3>
+        <p>フレンドをリストに追加して、彼らがオンラインの時に通知を受け取ります。</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🔗</div>
+        <h3>招待コード</h3>
+        <p>友人に招待コードを共有すれば、簡単にワールドに参加してもらえます。</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">📊</div>
+        <h3>プレイ統計</h3>
+        <p>プレイ時間、実績、キル数など、詳細な統計情報を確認できます。</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🎖️</div>
+        <h3>アチーブメント</h3>
+        <p>様々なアチーブメントをアンロック。あなたの成就を記録します。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 専門機能 -->
+  <section class="feature-section">
+    <h2>🔧 専門機能</h2>
+    
+    <div class="spec-box">
+      <h4>🎯 HDビデオ対応</h4>
+      <p>高解像度（4K まで）でのプレイに対応。美しいグラフィックスを楽しめます。</p>
+    </div>
+
+    <div class="spec-box">
+      <h4>🔊 オーディオエンジン</h4>
+      <p>立体音響に対応。敵や動物の方向が耳で分かります。</p>
+    </div>
+
+    <div class="spec-box">
+      <h4>🌐 マルチランゲージ対応</h4>
+      <p>複数言語に対応（日本語、英語、中国語など）。</p>
+    </div>
+
+    <div class="spec-box">
+      <h4>⌨️ キーバインディング</h4>
+      <p>キーバインディングを完全にカスタマイズ。自分好みの操作に。</p>
+    </div>
+
+    <div class="spec-box">
+      <h4>🎮 コントローラー対応</h4>
+      <p>ゲームパッド、コントローラーでのプレイに対応。</p>
+    </div>
+
+    <div class="spec-box">
+      <h4>📱 タッチスクリーン対応</h4>
+      <p>タブレットでも快適にプレイできます。</p>
+    </div>
+  </section>
+
+  <!-- 比較表 -->
+  <section class="feature-section">
+    <h2>📋 Minecraft バージョン比較</h2>
+    
+    <table class="comparison-table">
+      <thead>
+        <tr>
+          <th>機能</th>
+          <th>DeltaClient</th>
+          <th>Minecraft Java</th>
+          <th>Minecraft Bedrock</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>ブラウザプレイ</td>
+          <td><span class="check">✓</span></td>
+          <td><span class="cross">✗</span></td>
+          <td><span class="cross">✗</span></td>
+        </tr>
+        <tr>
+          <td>インストール不要</td>
+          <td><span class="check">✓</span></td>
+          <td><span class="cross">✗</span></td>
+          <td><span class="cross">✗</span></td>
+        </tr>
+        <tr>
+          <td>低スペック対応</td>
+          <td><span class="check">✓</span></td>
+          <td>〇</td>
+          <td>〇</td>
+        </tr>
+        <tr>
+          <td>マルチプレイ</td>
+          <td><span class="check">✓</span></td>
+          <td><span class="check">✓</span></td>
+          <td><span class="check">✓</span></td>
+        </tr>
+        <tr>
+          <td>クリエイティブモード</td>
+          <td><span class="check">✓</span></td>
+          <td><span class="check">✓</span></td>
+          <td><span class="check">✓</span></td>
+        </tr>
+        <tr>
+          <td>1.14.4 プロトコル</td>
+          <td><span class="check">✓</span></td>
+          <td><span class="check">✓</span></td>
+          <td><span class="cross">✗</span></td>
+        </tr>
+        <tr>
+          <td>購入不要</td>
+          <td><span class="check">✓</span></td>
+          <td><span class="cross">✗</span></td>
+          <td><span class="cross">✗</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="section" style="text-align: center;">
+    <h2>すべての機能を試してみよう</h2>
+    <p style="font-size: 1.1rem;">今すぐプレイ開始して、DeltaClient の全機能を体験してください。</p>
+    <a href="../index.html" class="btn">プレイ開始</a>
+  </section>
+</div>
+
+<footer>
+  <p>&copy; 2026 DeltaClient. All rights reserved. | 
+  <a href="../index.html">ホーム</a> | 
+  <a href="../docs/index.html">FAQ</a> | 
+  <a href="features.html">機能</a></p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<title>DeltaClient FAQ - よくある質問</title>
+<meta content="DeltaClient FAQ" property="og:title">
+<meta content="website" property="og:type">
+<meta content="Eaglercraft 1.14.4 と OptiFine に関するよくある質問とその回答です。" property="og:description">
+<meta content="Eaglercraft 1.14.4 と OptiFine に関するよくある質問とその回答です。" name="description">
+<link rel="stylesheet" href="style.css">
+<style>
+.faq-container {
+  margin-top: 2rem;
+}
+
+.faq-category {
+  margin-bottom: 3rem;
+}
+
+.faq-category h3 {
+  font-size: 1.3rem;
+  margin: 2rem 0 1rem 0;
+  color: var(--primary-color);
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--border-color);
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="header-content">
+    <a href="../index.html" class="logo">DeltaClient</a>
+    <nav>
+      <a href="../index.html">ホーム</a>
+      <a href="index.html" class="active">FAQ</a>
+      <a href="../server/index.html">サーバー</a>
+      <a href="../lol/index.html">遊び</a>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <section class="hero">
+    <h1>よくある質問 (FAQ)</h1>
+    <p>Eaglercraft 1.14.4 と DeltaClient についてのよくある質問をまとめました。<br>
+    ここで答えが見つからない場合は、Discord コミュニティにお気軽にお問い合わせください。</p>
+  </section>
+
+  <div class="faq-container">
+    <!-- 基本的な質問 -->
+    <section class="faq-category">
+      <h3>🔰 基本的な質問</h3>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>DeltaClient とは何ですか？</h3>
+          <span class="faq-toggle">▼</span>
+        </div>
+        <div class="faq-answer">
+          <p>DeltaClient は、Eaglercraft 1.14.4 + OptiFine のブラウザベースのランチャーです。インストール不要で、ブラウザからすぐに Minecraft をプレイできます。パフォーマンス最適化により、低スペック環境でも快適にプレイできるのが特徴です。</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>Eaglercraft とは何ですか？</h3>
+          <span class="faq-toggle">▼</span>
+        </div>
+        <div class="faq-answer">
+          <p>Eaglercraft は、Minecraft Java Edition を WebGL にコンパイルしたバージョンです。ブラウザで Minecraft をプレイできるため、インストールやダウンロードが不要です。マルチプレイサーバーにも対応しています。</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>本物の Minecraft は必要ですか？</h3>
+          <span class="faq-toggle">▼</span>
+        </div>
+        <div class="faq-answer">
+          <p>いいえ、不要です。DeltaClient はスタンドアロンで動作し、Minecraft Java Edition を購入する必要はありません。ブラウザからすぐにプレイを開始できます。</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>どのブラウザに対応していますか？</h3>
+          <span class="faq-toggle">▼</span>
+        </div>
+        <div class="faq-answer">
+          <p>WebGL 対応の最新ブラウザであれば動作します。推奨環境は Chrome, Firefox, Safari, Edge などです。古いバージョンのブラウザでは動作しないことがあります。</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>Mac でも使えますか？</h3>
+          <span class="faq-toggle">▼</span>
+        </div>
+        <div class="faq-answer">
+          <p>はい、Mac でもブラウザから使用できます。ただし、WebGL に対応した最新のブラウザが必要です。Safari は特定のバージョンで制限がある場合があります。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- パフォーマンス関連 -->
+    <section class="faq-category">
+      <h3>⚡ パフォーマンス関連</h3>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>どのくらいの FPS が出ますか？</h3>
+          <span class="faq-toggle">▼</span>
+        </div>
+        <div class="faq-answer">
+          <p>OptiFine の最適化により、ほとんどの環境で 60+ FPS が期待できます。ただし、PC のスペックやネットワーク速度により差があります。古い PC でも 30-40 FPS 程度でプレイ可能です。</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>低スペック PC でも動きますか？</h3>
+          <span class="faq-toggle">▼</span>
+        </div>
+        <div class="faq-answer">
+          <p>はい。DeltaClient は低スペック環境での動作を最優先に設計されています。レンダー距離やグラフィック設定を調整することで、古い PC でも快適にプレイできます。</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>シェーダーは対応していますか？</h3>
+          <span class="faq-toggle">▼</span>
+        </div>
+        <div class="faq-answer">
+          <p>DeltaClient ではシェーダーを無効化し、パフォーマンスを優先しています。これにより、ブラウザ版でも安定した高フレームレートを実現しています。</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>ブラウザのメモリ使用量が多いです</h3>
+          <span class="faq-toggle">▼</span>
+        </div>
+        <div class="faq-answer">
+          <p>これはゲームの性質上、ある程度は避けられません。ただし、ブラウザのリソース制限を確認したり、不要なタブを閉じたりすることで、メモリ使用量を削減できます。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- マルチプレイ関連 -->
+    <section class="faq-category">
+      <h3>🌍 マルチプレイ関連</h3>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>サーバーに参加するにはどうすればいいですか？</h3>
+          <span class="faq-toggle">▼</span>
+        </div>
+        <div class="faq-answer">
+          <p>ゲーム内のマルチプレイメニューからサーバーアドレスを入力するか、サーバーリストから選択してください。招待コードがある場合は、そのコードを入力すれば簡単に参加できます。</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>友人を招待するにはどうしたらいいですか？</h3>
+          <span class="faq-toggle">▼</span>
+        </div>
+        <div class="faq-answer">
+          <p>現在のワールドの「招待を共有」ボタンから招待コードを生成できます。このコードを友人に共有すれば、友人もワールドに参加できます。</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>ラグが発生しています</h3>
+          <span class="faq-toggle">▼</span>
+        </div>
+        <div class="faq-answer">
+          <p>以下の対策を試してください：1) インターネット接続を確認、2) ブラウザのキャッシュをクリア、3) グラフィック設定を下げる、4) 不要なバックグラウンドアプリを終了。それでも改善しない場合は、Discord で報告してください。</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>プレイヤー数に制限はありますか？</h3>
+          <span class="faq-toggle">▼</span>
+        </div>
+        <div class="faq-answer">
+          <p>サーバーの設定により異なります。通常、公開サーバーでは 10-50 人が同時にプレイできます。プライベートサーバーではより多くのプレイヤーをホストできる場合があります。</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>サーバーは 24/7 稼働していますか？</h3>
+          <span class="faq-toggle">▼</span>
+        </div>
+        <div class="faq-answer">
+          <p>メインサーバーは 24/7 稼働しています。ただし、定期的なメンテナンスのため、一時的にダウンすることがあります。メンテナンススケジュールは Discord で事前告知されます。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- セーブデータ -->
+    <section class="faq-category">
+      <h3>💾 セーブデータ関連</h3>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>セーブデータはどこに保存されますか？</h3>
+          <span class="faq-toggle">▼</span>
+        </div>
+        <div class="faq-answer">
+          <p>セーブデータはブラウザのローカルストレージに保存されます。ブラウザのキャッシュをクリアするとセーブデータが失われる可能性があります。重要なワールドはバックアップを推奨します。</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>別の PC でセーブデータを復元できますか？</h3>
+          <span class="faq-toggle">▼</span>
+        </div>
+        <div class="faq-answer">
+          <p>ブラウザのデータを別の PC に転送することで、理論上は可能ですが、推奨されません。マルチプレイサーバーのデータはサーバー側に保存されるため、別の PC からアクセスできます。</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>ワールドをダウンロードできますか？</h3>
+          <span class="faq-toggle">▼</span>
+        </div>
+        <div class="faq-answer">
+          <p>現在のバージョンではワールドのダウンロード機能はありません。ただし、今後のアップデートで実装される予定です。</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>セーブデータが失われた場合はどうすればいいですか？</h3>
+          <span class="faq-toggle">▼</span>
+        </div>
+        <div class="faq-answer">
+          <p>ブラウザのローカルストレージに復元できない場合、復旧は困難です。重要なワールドは定期的にバックアップすることをお勧めします。ただし、サーバーのデータは別に保存されているため、サーバーに参加すれば復旧できます。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- トラブルシューティング -->
+    <section class="faq-category">
+      <h3>🔧 トラブルシューティング</h3>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>ゲームが起動しません</h3>
+          <span class="faq-toggle">▼</span>
+        </div>
+        <div class="faq-answer">
+          <p>以下を確認してください：1) ブラウザが最新版か、2) WebGL が有効か、3) Javascript が有効か、4) ブラウザのキャッシュをクリア。それでも起動しない場合は、別のブラウザを試してください。</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>「WebGL not supported」というエラーが出ます</h3>
+          <span class="faq-toggle">▼</span>
+        </div>
+        <div class="faq-answer">
+          <p>お使いのブラウザが WebGL に対応していません。以下を試してください：1) ブラウザを最新版に更新、2) 別のブラウザを試す（Chrome, Firefox を推奨）、3) GPU ドライバを更新。</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>キーボード入力が反応しません</h3>
+          <span class="faq-toggle">▼</span>
+        </div>
+        <div class="faq-answer">
+          <p>ゲーム画面がアクティブになっていることを確認してください。クリックしてフォーカスを取得してから入力してください。問題が続く場合は、別のキーボードで試すか、ブラウザを再起動してください。</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>画面がちらつきます</h3>
+          <span class="faq-toggle">▼</span>
+        </div>
+        <div class="faq-answer">
+          <p>これは GPU ドライバの問題の可能性があります。以下を試してください：1) GPU ドライバを更新、2) ブラウザの硬件アクセラレーションを無効化、3) グラフィック設定を下げる。</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>Discord にログインできません</h3>
+          <span class="faq-toggle">▼</span>
+        </div>
+        <div class="faq-answer">
+          <p>ブラウザのポップアップブロックが有効になっていないか確認してください。また、3rd パーティクッキーが有効になっているか確認してください。それでも解決しない場合は、ブラウザを再起動してみてください。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- コミュニティ -->
+    <section class="faq-category">
+      <h3>👥 コミュニティ関連</h3>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>Discord コミュニティに参加するにはどうしたらいいですか？</h3>
+          <span class="faq-toggle">▼</span>
+        </div>
+        <div class="faq-answer">
+          <p>ホームページの Discord リンクをクリックするか、「サーバー」ページから直接参加できます。コミュニティではイベント情報や助言を受けることができます。</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>チートやハックの使用は許可されていますか？</h3>
+          <span class="faq-toggle">▼</span>
+        </div>
+        <div class="faq-answer">
+          <p>いいえ。マルチプレイサーバーではチート、ハック、不正行為は禁止されています。違反したアカウントは永続的にバンされる可能性があります。</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>建築系のイベントはありますか？</h3>
+          <span class="faq-toggle">▼</span>
+        </div>
+        <div class="faq-answer">
+          <p>はい。定期的に建築コンテスト、生存挑戦、PvP イベントなど、様々なイベントを開催しています。詳細は Discord で告知されます。</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>サーバーに問題を報告するにはどうしたらいいですか？</h3>
+          <span class="faq-toggle">▼</span>
+        </div>
+        <div class="faq-answer">
+          <p>Discord の「#バグ報告」チャンネルで報告してください。詳細な説明と、問題を再現するための手順を含めていただくと、より迅速に対応できます。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- セキュリティとプライバシー -->
+    <section class="faq-category">
+      <h3>🔒 セキュリティとプライバシー</h3>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>データは安全ですか？</h3>
+          <span class="faq-toggle">▼</span>
+        </div>
+        <div class="faq-answer">
+          <p>はい。ゲーム内データはローカルストレージに暗号化されて保存されます。ただし、ローカルストレージはブラウザのセキュリティに依存するため、100% 安全とは言い切れません。重要なデータのバックアップをお勧めします。</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>個人情報を集められていますか？</h3>
+          <span class="faq-toggle">▼</span>
+        </div>
+        <div class="faq-answer">
+          <p>DeltaClient はプレイヤー名とゲーム統計情報のみを収集します。個人情報（メール、住所など）は収集していません。詳細はプライバシーポリシーをご覧ください。</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>Minecraft アカウントに接続する必要がありますか？</h3>
+          <span class="faq-toggle">▼</span>
+        </div>
+        <div class="faq-answer">
+          <p>いいえ。DeltaClient はスタンドアロンで動作し、Minecraft アカウント接続は不要です。プレイヤー名のみで遊べます。</p>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<footer>
+  <p>&copy; 2026 DeltaClient. All rights reserved. | 
+  <a href="../index.html">ホーム</a> | 
+  <a href="index.html">FAQ</a> | 
+  <a href="../server/index.html">サーバー</a> | 
+  <a href="../lol/index.html">遊び</a></p>
+</footer>
+
+<script>
+// FAQ アコーディオン機能
+document.querySelectorAll('.faq-question').forEach(question => {
+  question.addEventListener('click', function() {
+    const faqItem = this.parentElement;
+    faqItem.classList.toggle('active');
+  });
+});
+</script>
+</body>
+</html>
