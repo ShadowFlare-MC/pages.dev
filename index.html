@@ -394,6 +394,8 @@ body.game-running *::after {
           title="ShadowFlare DeltaClient 1.14.4"
           class="w-full h-full border-0"
           loading="eager"
+          tabindex="0"
+          allow="fullscreen; pointer-lock; autoplay"
           allowfullscreen></iframe>
 </div>
 
@@ -438,6 +440,50 @@ body.game-running *::after {
     }
   }
 
+  /*
+   * TeaVM / WASM / Canvas のキーボード入力を確実にゲーム側へ渡す。
+   *
+   * iframe の中は別の Document なので、親ページで keydown を拾って
+   * iframe へ再送する方式にはしない（KeyboardEvent の再送は
+   * isTrusted=false になり、ゲーム側の入力処理を壊すことがある）。
+   *
+   * 代わりに「ゲーム iframe 内の window / body / canvas にフォーカス」
+   * させる。これならゲーム自身の keydown / keyup がそのまま動く。
+   */
+  function focusGame() {
+    if (!open) return;
+
+    try {
+      iframe.focus();
+
+      if (!iframe.contentWindow || !iframe.contentDocument) return;
+
+      iframe.contentWindow.focus();
+
+      var doc = iframe.contentDocument;
+      var body = doc.body;
+
+      if (body) {
+        if (!body.hasAttribute("tabindex")) {
+          body.setAttribute("tabindex", "-1");
+        }
+        body.focus();
+      }
+
+      // Eaglercraft / TeaVM が作成する Canvas に直接フォーカス
+      var canvas = doc.querySelector("canvas");
+      if (canvas) {
+        if (!canvas.hasAttribute("tabindex")) {
+          canvas.setAttribute("tabindex", "0");
+        }
+        canvas.focus();
+      }
+    } catch (err) {
+      // cross-origin 等で contentDocument に触れない場合でも、
+      // iframe 自体の focus はすでに試行済み。
+    }
+  }
+
   function startGame() {
     if (loading || open) return;
 
@@ -453,10 +499,31 @@ body.game-running *::after {
     // ゲーム画面を表示
     overlay.classList.remove("hidden");
 
+    open = true;
+
     // Blobを使わず、実URLを直接ロード
     iframe.src = GAME_HTML;
 
-    open = true;
+    /*
+     * iframe のロード完了直後にゲーム側へフォーカス。
+     * Canvas が TeaVM 起動後に生成される場合があるので、
+     * 少しだけ再試行する。
+     */
+    iframe.addEventListener("load", focusGame, { once: true });
+
+    var focusAttempts = 0;
+    var focusTimer = setInterval(function () {
+      focusAttempts++;
+      focusGame();
+
+      if (focusAttempts >= 20 || !open) {
+        clearInterval(focusTimer);
+      }
+    }, 100);
+
+    // 起動直後にも一度フォーカスを試す
+    setTimeout(focusGame, 0);
+
     setLoading(false);
   }
 
@@ -480,6 +547,16 @@ body.game-running *::after {
   });
 
   closeBtn.addEventListener("click", closeGame);
+
+  // ゲーム領域をクリックしたら必ずゲームへフォーカスを戻す
+  overlay.addEventListener("pointerdown", function (e) {
+    if (!open) return;
+
+    // 閉じるボタンをクリックした場合はフォーカスを奪わない
+    if (e.target === closeBtn || closeBtn.contains(e.target)) return;
+
+    setTimeout(focusGame, 0);
+  }, true);
 
   // Escで閉じる
   document.addEventListener("keydown", function (e) {
